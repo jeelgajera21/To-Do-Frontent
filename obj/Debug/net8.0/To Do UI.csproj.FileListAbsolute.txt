@@ -1,0 +1,38 @@
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\appsettings.Development.json
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\appsettings.json
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\To Do UI.staticwebassets.runtime.json
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\To Do UI.staticwebassets.endpoints.json
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\To Do UI.exe
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\To Do UI.deps.json
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\To Do UI.runtimeconfig.json
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\To Do UI.dll
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\To Do UI.pdb
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.AssemblyInfoInputs.cache
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.AssemblyInfo.cs
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.csproj.CoreCompileInputs.cache
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.MvcApplicationPartsAssemblyInfo.cache
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.RazorAssemblyInfo.cache
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.RazorAssemblyInfo.cs
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.sourcelink.json
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\scopedcss\bundle\To Do UI.styles.css
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\scopedcss\projectbundle\To Do UI.bundle.scp.css
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets.build.json
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets.development.json
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets\msbuild.To Do UI.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets\msbuild.To Do UI.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets\msbuild.build.To Do UI.props
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.To Do UI.props
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.To Do UI.props
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.dll
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\refint\To Do UI.dll
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.pdb
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.genruntimeconfig.cache
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\ref\To Do UI.dll
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.csproj.AssemblyReference.cache
+D:\Sem 6\ADV .NET\To Do UI\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Sem 6\ADV .NET\To Do UI\obj\Debug\net8.0\To Do UI.csproj.Up2Date

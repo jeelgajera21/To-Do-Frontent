@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\To Do UI.props" />
+</Project>
