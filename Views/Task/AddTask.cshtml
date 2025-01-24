@@ -4,33 +4,33 @@
     <main>
         <form method="post" asp-controller="Task" asp-action="Save">
             <div class="mb-3">
-                <label for="taskID" class="form-label">Task ID</label>
-                <input type="hidden" class="form-control" id="taskID" name="TaskID">
+                <label  class="form-label">Task ID</label>
+                <input type="number" asp-for="TaskID" class="form-control" id="taskID" name="TaskID" readonly>
             </div>
 
             <div class="mb-3">
                 <label for="userID" class="form-label">User ID</label>
-                <input type="number" class="form-control" id="userID" name="UserID" required>
+                <input type="number" asp-for="UserID" class="form-control" id="userID" name="UserID" required>
             </div>
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="title" name="Title" required>
+                <input type="text" asp-for="Title" class="form-control" id="title" name="Title" required>
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" id="description" name="Description" rows="3" required></textarea>
+                <textarea class="form-control" asp-for="Description" id="description" name="Description" rows="3" required></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="dueDate" class="form-label">Due Date</label>
-                <input type="date" class="form-control" id="dueDate" name="DueDate" required>
+                <input type="datetime-local" asp-for="DueDate" class="form-control" id="dueDate" name="DueDate" required>
             </div>
 
             <div class="mb-3">
                 <label for="priority" class="form-label">Priority</label>
-                <select class="form-select" id="priority" name="Priority" required>
+                <select class="form-select" asp-for="Priority" id="priority" name="Priority" required>
                     <option value="1">Low</option>
                     <option value="2">Medium</option>
                     <option value="3">High</option>
@@ -39,7 +39,7 @@
 
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
-                <select class="form-select" id="status" name="Status" required>
+                <select class="form-select" asp-for="Status" id="status" name="Status" required>
                     <option value="Pending">Pending</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Completed">Completed</option>
@@ -48,17 +48,17 @@
 
             <div class="mb-3">
                 <label for="categoryID" class="form-label">Category ID</label>
-                <input type="number" class="form-control" id="categoryID" name="CategoryID" required>
+                <input type="number" asp-for="CategoryID" class="form-control" id="categoryID" name="CategoryID" required>
             </div>
 
             <div class="mb-3">
                 <label for="createdAt" class="form-label">Created At</label>
-                <input type="datetime-local" class="form-control" id="createdAt" name="CreatedAt" required>
+                <input type="datetime-local" asp-for="CreatedAt" class="form-control" id="createdAt" name="CreatedAt" readonly>
             </div>
 
             <div class="mb-3">
                 <label for="updatedAt" class="form-label">Updated At</label>
-                <input type="datetime-local" class="form-control" id="updatedAt" name="UpdatedAt" required>
+                <input type="datetime-local" asp-for="UpdatedAt" class="form-control" id="updatedAt" name="UpdatedAt" readonly>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>

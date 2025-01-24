@@ -68,20 +68,16 @@
                     <ul class="nav nav-secondary">
                         <li class="nav-item active">
                             <a data-bs-toggle="collapse"
-                               href="#dashboard"
+                               data-bs-target="#dashboard"
                                class="collapsed"
                                aria-expanded="false">
                                 <i class="fas fa-home"></i>
-                                <p>Dashboard</p>
+                                <p>Compenents</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="dashboard">
                                 <ul class="nav nav-collapse">
-                                    <li>
-                                        <a href="../demo1/index.html">
-                                            <span class="sub-item">Dashboard 1</span>
-                                        </a>
-                                    </li>
+                                    
                                     <li>
                                         <a asp-controller="Task" asp-action="TaskList">
                                             <span class="sub-item">TaskList</span>
@@ -456,9 +452,9 @@
         <!-- Datatables -->
         <script src="~/assets/js/plugin/datatables/datatables.min.js"></script>
 
-        <!-- Bootstrap Notify -->
+       @*  <!-- Bootstrap Notify -->
         <script src="~/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
-
+ *@
         <!-- jQuery Vector Maps -->
         <script src="~/assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
         <script src="~/assets/js/plugin/jsvectormap/world.js"></script>
@@ -475,13 +471,17 @@
         <!-- Bootstrap JS and dependencies -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+        <!-- Include jQuery and Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
         <script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
             @await RenderSectionAsync("Scripts", required: false)
 
-        <script>
+       @*  <script>
             $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
               type: "line",
               height: "70",
@@ -508,6 +508,6 @@
               lineColor: "#ffa534",
               fillColor: "rgba(255, 165, 52, .14)",
             });
-        </script>
+        </script> *@
 </body>
 </html>

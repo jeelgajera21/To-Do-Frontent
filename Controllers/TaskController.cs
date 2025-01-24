@@ -9,21 +9,27 @@ namespace To_Do_UI.Controllers
 {
     public class TaskController : Controller
     {
-         Uri baseAddress = new Uri("http://localhost:5028");
-
+        private readonly IConfiguration _configuration;
         private readonly HttpClient _client;
 
-        public TaskController()
+        #region Constructor
+        public TaskController(IConfiguration configuration)
         {
-            _client = new HttpClient();
-            _client.BaseAddress = baseAddress;
+            _configuration = configuration;
+            _client = new HttpClient
+            {
+                BaseAddress = new System.Uri(_configuration["WebApiBaseUrl"])
+            };
         }
+       
+        #endregion
 
+        #region List of Tasks
         [HttpGet]
         public IActionResult TaskList()
         {
             List<TaskModel> task = new List<TaskModel>();
-            HttpResponseMessage response = _client.GetAsync($"{_client.BaseAddress}Task").Result;
+            HttpResponseMessage response = _client.GetAsync("Task").Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
@@ -32,10 +38,12 @@ namespace To_Do_UI.Controllers
                 task = JsonConvert.DeserializeObject<List<TaskModel>>(data);
             }
 
+
             return View("TaskList", task);
         }
+        #endregion
 
-
+        #region Add Task
         [HttpGet("{TaskID}")]
         [Route("addtask")]
         public IActionResult AddTask(int? TaskID)
@@ -44,7 +52,7 @@ namespace To_Do_UI.Controllers
 
             if (TaskID != null)
             {
-                HttpResponseMessage response = _client.GetAsync($"{_client.BaseAddress}Task/{TaskID}").Result;
+                HttpResponseMessage response = _client.GetAsync($"Task/{TaskID}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -61,8 +69,9 @@ namespace To_Do_UI.Controllers
             }
             return View("AddTask", new TaskModel());
         }
+        #endregion
 
-
+        #region Save Task
         [HttpPost]
         public async Task<IActionResult> Save(TaskModel task)
         {
@@ -73,9 +82,9 @@ namespace To_Do_UI.Controllers
                 HttpResponseMessage response;
 
                  if (task.TaskID == null)
-                    response = await _client.PostAsync($"{_client.BaseAddress}Task", content);
+                    response = await _client.PostAsync($"Task", content);
                 else
-                    response = await _client.PutAsync($"{_client.BaseAddress}Task", content);
+                    response = await _client.PutAsync($"Task", content);
 
                 if (response.IsSuccessStatusCode)
                     return RedirectToAction("TaskList");
@@ -83,7 +92,14 @@ namespace To_Do_UI.Controllers
           
             return View("AddTask", task);
         }
+        #endregion
 
-
+        #region Delete Task
+        public async Task<IActionResult> DeleteTask(int TaskID)
+        {
+            var response = await _client.DeleteAsync($"Task/?TaskID={TaskID}");
+            return RedirectToAction("TaskList");
+        }
+        #endregion
     }
 }
