@@ -1,0 +1,39 @@
+﻿@model CategoryModel
+
+<main>
+    <div class="container container-fluid pt-3">
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+            <h3>@(Model.CategoryID == null ? "Add New Category" : "Edit Category")</h3>
+                    </div>
+                </div>
+            </div>
+
+            <form asp-controller="Category" asp-action="Save" method="post">
+                <input type="hidden" asp-for="CategoryID" />
+
+                <div class="mb-3">
+                    <label class="form-label">User ID</label>
+                    <input type="number" class="form-control" asp-for="UserID" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Category Name</label>
+                    <input type="text" class="form-control" asp-for="CategoryName" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" asp-for="Description"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save"></i> Save
+                </button>
+                <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </form>
+        </section>
+    </div>
+</main>

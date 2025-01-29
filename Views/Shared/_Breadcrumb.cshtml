@@ -1,0 +1,36 @@
+﻿@{
+    var pathSegments = Context.Request.Path.Value.Trim('/').Split('/');
+    var breadcrumbList = new List<(string Name, string Url)>();
+
+    if (pathSegments.Length > 0 && !string.IsNullOrWhiteSpace(pathSegments[0]))
+    {
+        string url = "/";
+        breadcrumbList.Add(("To Do", url)); // Add Home link
+
+        for (int i = 0; i < pathSegments.Length; i++)
+        {
+            url += pathSegments[i] + "/";
+            breadcrumbList.Add((pathSegments[i], url));
+        }
+    }
+}
+<div class="pagetitle">
+    <h1>@breadcrumbList.LastOrDefault().Name</h1>
+    <nav>
+        <ol class="breadcrumb">
+            @foreach (var item in breadcrumbList)
+            {
+                if (item.Equals(breadcrumbList.Last()))
+                {
+                    <li class="breadcrumb-item active">@item.Name</li>
+                }
+                else
+                {
+                    <li class="breadcrumb-item">
+                        <a href="@item.Url">@item.Name</a>
+                    </li>
+                }
+            }
+        </ol>
+    </nav>
+</div>

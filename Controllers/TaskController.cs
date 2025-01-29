@@ -2,11 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http;
-using ToDo_API.Models;
+using To_Do_UI.Models;
 using System.Text;
 
 namespace To_Do_UI.Controllers
 {
+    [Route("[controller]")]
     public class TaskController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -45,7 +46,7 @@ namespace To_Do_UI.Controllers
 
         #region Add Task
         [HttpGet("{TaskID}")]
-        [Route("addtask")]
+        [Route("AddTask")]
         public IActionResult AddTask(int? TaskID)
         {
             TaskModel taskbyid = null;

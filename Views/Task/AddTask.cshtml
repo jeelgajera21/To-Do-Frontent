@@ -1,36 +1,45 @@
 ﻿@model TaskModel
 
-<div >
     <main>
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                    <h3>@(Model.TaskID == null ? "Add New Task" : "Edit Task")</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body p-3">
         <form method="post" asp-controller="Task" asp-action="Save">
-            <div class="mb-3">
+            <div class="mb-3 ">
                 <label  class="form-label">Task ID</label>
                 <input type="number" asp-for="TaskID" class="form-control" id="taskID" name="TaskID" readonly>
             </div>
 
             <div class="mb-3">
                 <label for="userID" class="form-label">User ID</label>
-                <input type="number" asp-for="UserID" class="form-control" id="userID" name="UserID" required>
+                <input type="number" asp-for="UserID" class="form-control" id="userID" name="UserID" >
             </div>
 
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
-                <input type="text" asp-for="Title" class="form-control" id="title" name="Title" required>
+                <input type="text" asp-for="Title" class="form-control" id="title" name="Title" >
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
-                <textarea class="form-control" asp-for="Description" id="description" name="Description" rows="3" required></textarea>
+                <textarea class="form-control" asp-for="Description" id="description" name="Description" rows="3" ></textarea>
             </div>
 
             <div class="mb-3">
                 <label for="dueDate" class="form-label">Due Date</label>
-                <input type="datetime-local" asp-for="DueDate" class="form-control" id="dueDate" name="DueDate" required>
+                <input type="datetime-local" asp-for="DueDate" class="form-control" id="dueDate" name="DueDate" >
             </div>
 
             <div class="mb-3">
                 <label for="priority" class="form-label">Priority</label>
-                <select class="form-select" asp-for="Priority" id="priority" name="Priority" required>
+                <select class="form-select" asp-for="Priority" id="priority" name="Priority" >
                     <option value="1">Low</option>
                     <option value="2">Medium</option>
                     <option value="3">High</option>
@@ -39,7 +48,7 @@
 
             <div class="mb-3">
                 <label for="status" class="form-label">Status</label>
-                <select class="form-select" asp-for="Status" id="status" name="Status" required>
+                <select class="form-select" asp-for="Status" id="status" name="Status" >
                     <option value="Pending">Pending</option>
                     <option value="In Progress">In Progress</option>
                     <option value="Completed">Completed</option>
@@ -48,7 +57,7 @@
 
             <div class="mb-3">
                 <label for="categoryID" class="form-label">Category ID</label>
-                <input type="number" asp-for="CategoryID" class="form-control" id="categoryID" name="CategoryID" required>
+                <input type="number" asp-for="CategoryID" class="form-control" id="categoryID" name="CategoryID" >
             </div>
 
             <div class="mb-3">
@@ -62,7 +71,12 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a class="btn btn-black"
+               asp-controller="Task"
+               asp-action="TaskList">Cancel</a>
         </form>
+            </div>
+            </div>
 
-</div>
+</section>
 </main>

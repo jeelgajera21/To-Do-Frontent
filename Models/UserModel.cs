@@ -1,4 +1,4 @@
-﻿namespace ToDo_API.Models
+﻿namespace To_Do_UI.Models
 {
     public class UserModel
     {
