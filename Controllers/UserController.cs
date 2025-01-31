@@ -56,17 +56,25 @@ namespace To_Do_UI.Controllers
                         Console.WriteLine(userResponse);
                         if (userResponse != null)
                         {
-                           /* HttpContext.Session.SetInt32("UserID", userResponse.UserID);
+                            Console.WriteLine("Setting session values...");
+
+                            HttpContext.Session.SetInt32("UserID", userResponse.UserID);
                             HttpContext.Session.SetString("UserName", userResponse.UserName);
                             HttpContext.Session.SetString("Email", userResponse.Email);
-*/
+                            HttpContext.Session.SetString("Name", userResponse.Name);
+
+                            Console.WriteLine("Session UserID: " + HttpContext.Session.GetInt32("UserID"));
+                            Console.WriteLine("Session UserName: " + HttpContext.Session.GetString("UserName"));
+                            Console.WriteLine("Session Email: " + HttpContext.Session.GetString("Email"));
+                            Console.WriteLine("Session Name: " + HttpContext.Session.GetString("Name"));
+
                             if (!userResponse.IsActive)
                             {
                                 ModelState.AddModelError("", "Your account is inactive. Please contact support.");
                                 return View("Login", userLogin);
                             }
 
-                            return RedirectToAction("Index","Home");
+                            return RedirectToAction("Index", "Home");
                         }
                     }
 
@@ -100,9 +108,45 @@ namespace To_Do_UI.Controllers
         #endregion
         #region Register
 
+        [HttpPost]
+        public async Task<IActionResult> UserRegister(UserModel user)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Register", user);
+            }
+            try
+            {
+                var json = JsonConvert.SerializeObject(user);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await _client.PostAsync("User/register", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Login");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "An error occurred while processing your request.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception: " + ex.Message);
+                ModelState.AddModelError("", "An error occurred while processing your request.");
+            }
+            return View("Register", user);
+        }
         public IActionResult Register()
         {
             return View();
+        }
+        #endregion
+
+        #region Logout
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "User");
         }
         #endregion
     }

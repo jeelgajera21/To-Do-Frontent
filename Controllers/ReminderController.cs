@@ -5,18 +5,20 @@ using To_Do_UI.Models;
 
 namespace To_Do_UI.Controllers
 {
-    [Route("[controller]")]
-    public class CategoryController : Controller
+    public class ReminderController : Controller
     {
+        
+
         private readonly IConfiguration _configuration;
         private readonly HttpClient _client;
 
         #region Constructor
-        public CategoryController(IConfiguration configuration)
+        public ReminderController(IConfiguration configuration)
         {
             _configuration = configuration;
             _client = new HttpClient
             {
+               
                 BaseAddress = new System.Uri(_configuration["WebApiBaseUrl"])
             };
         }
@@ -26,31 +28,31 @@ namespace To_Do_UI.Controllers
             return View();
         }
 
-        #region CategoryList
+        #region ReminderList
 
         [HttpGet]
         /*[Route("categorylist")]*/
-        public IActionResult CategoryList()
+        public IActionResult ReminderList()
         {
-            List<CategoryModel> category = new List<CategoryModel>();
-            HttpResponseMessage response = _client.GetAsync("Category").Result;
+            List<ReminderModel> reminder = new List<ReminderModel>();
+            HttpResponseMessage response = _client.GetAsync("Reminder").Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
                 /*  dynamic jsonObject = JsonConvert.DeserializeObject(data);*/
 
-                category = JsonConvert.DeserializeObject<List<CategoryModel>>(data);
+                reminder = JsonConvert.DeserializeObject<List<ReminderModel>>(data);
             }
 
 
-            return View("CategoryList", category);
+            return View("ReminderList", reminder);
 
 
         }
 
+        [Route("ReminderListByUser")]
         [HttpGet]
-        [Route("CategoryListByUser")]
-        public IActionResult CategoryListByUser()
+        public IActionResult ReminderListByUser()
         {
             var userid = HttpContext.Session.GetInt32("UserID");
             Console.WriteLine("userid : " + userid);
@@ -61,83 +63,83 @@ namespace To_Do_UI.Controllers
                 // Handle cases where the user is not logged in, e.g., redirect to login or show an error
                 return RedirectToAction("Login", "User"); // Assuming you have a login action
             }
-            List<CategoryModel> category = new List<CategoryModel>();
-            HttpResponseMessage response = _client.GetAsync($"Category/by-user/{userid}").Result;
+            List<ReminderModel> reminder = new List<ReminderModel>();
+            HttpResponseMessage response = _client.GetAsync($"Reminder/by-user/{userid}").Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
                 /*  dynamic jsonObject = JsonConvert.DeserializeObject(data);*/
 
-                category = JsonConvert.DeserializeObject<List<CategoryModel>>(data);
+                reminder = JsonConvert.DeserializeObject<List<ReminderModel>>(data);
             }
 
 
-            return View("CategoryList", category);
+            return View("ReminderList", reminder);
         }
 
         #endregion
 
-        #region Add Category
-        [HttpGet("{CategoryID}")]
-        [Route("AddCategory")]
-        public IActionResult AddCategory(int? CategoryID)
+        #region Add / Edit Reminder
+        [HttpGet("{ReminderID}")]
+        [Route("AddReminder")]
+        public IActionResult AddReminder(int? ReminderID)
         {
-            CategoryModel categorybyid = null;
+            ReminderModel reminderbyid = null;
 
-            if (CategoryID != null)
+            if (ReminderID != null)
             {
-                HttpResponseMessage response = _client.GetAsync($"Category/{CategoryID}").Result;
+                HttpResponseMessage response = _client.GetAsync($"Reminder/{ReminderID}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     string data = response.Content.ReadAsStringAsync().Result;
 
                     // Deserialize the data as a list of TaskModel
-                    var categories = JsonConvert.DeserializeObject<CategoryModel>(data);
+                    var reminders = JsonConvert.DeserializeObject<ReminderModel>(data);
 
                     // Get the first task from the list if it exists
-                    categorybyid = categories;
+                    reminderbyid = reminders;
                 }
 
-                return View("AddCategory", categorybyid);
+                return View("AddReminder", reminderbyid);
             }
-            return View("AddCategory", new CategoryModel());
+            return View("AddReminder", new ReminderModel());
         }
         #endregion
 
-        #region Save Category
+        #region Save Reminder
         [HttpPost]
-        public async Task<IActionResult> Save(CategoryModel category)
+        public async Task<IActionResult> Save(ReminderModel reminder)
         {
             if (ModelState.IsValid)
             {
-                var json = JsonConvert.SerializeObject(category);
+                var json = JsonConvert.SerializeObject(reminder);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response;
 
-                if (category.CategoryID== null)
-                    response = await _client.PostAsync($"Category", content);
+                if (reminder.ReminderID== null)
+                    response = await _client.PostAsync($"Reminder", content);
                 else
-                    response = await _client.PutAsync($"Category", content);
+                    response = await _client.PutAsync($"Reminder", content);
 
                 if (response.IsSuccessStatusCode)
-                    return RedirectToAction("CategoryList");
+                    return RedirectToAction("ReminderList");
             }
 
-            return View("AddCategory", category);
+            return View("AddReminder", reminder);
         }
         #endregion
 
-        #region Delete Category
+        #region Delete Reminder
 
-        public async Task<IActionResult> Delete(int CategoryID)
+        public async Task<IActionResult> Delete(int ReminderID)
         {
-            var response = await _client.DeleteAsync($"Category/?CategoryID={CategoryID}");
-            return RedirectToAction("CategoryList");
+            var response = await _client.DeleteAsync($"Reminder/?ReminderID={ReminderID}");
+            return RedirectToAction("ReminderList");
         }
 
         #endregion
 
-
+        
     }
 }

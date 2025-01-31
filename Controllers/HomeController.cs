@@ -17,6 +17,7 @@ namespace To_Do_UI.Controllers
         {
             return View();
         }
+        [CheckAccess]
         public IActionResult Profile()
         {
             return View();

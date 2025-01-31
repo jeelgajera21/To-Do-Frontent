@@ -7,6 +7,7 @@ using System.Text;
 
 namespace To_Do_UI.Controllers
 {
+    [CheckAccess]
     [Route("[controller]")]
     public class TaskController : Controller
     {
@@ -42,11 +43,40 @@ namespace To_Do_UI.Controllers
 
             return View("TaskList", task);
         }
+
+        [HttpGet]
+        [Route("TaskListByUser")]
+        public IActionResult TaskListByUser()
+        {
+            var userid = HttpContext.Session.GetInt32("UserID");
+            Console.WriteLine("userid : " + userid);
+
+            // Check if the user is logged in (replace "Guest" if you want to treat guests differently)
+            if (userid == null)
+            {
+                // Handle cases where the user is not logged in, e.g., redirect to login or show an error
+                return RedirectToAction("Login", "User"); // Assuming you have a login action
+            }
+            List<TaskModel> task = new List<TaskModel>();
+            HttpResponseMessage response = _client.GetAsync($"Task/by-user/{userid}").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string data = response.Content.ReadAsStringAsync().Result;
+                /*  dynamic jsonObject = JsonConvert.DeserializeObject(data);*/
+
+                task = JsonConvert.DeserializeObject<List<TaskModel>>(data);
+            }
+
+
+            return View("TaskList", task);
+        }
+
+
         #endregion
 
-        #region Add Task
+        #region Add / Edit Task
         [HttpGet("{TaskID}")]
-        [Route("AddTask")]
+        [Route("AddEditTask")]
         public IActionResult AddTask(int? TaskID)
         {
             TaskModel taskbyid = null;
@@ -60,10 +90,11 @@ namespace To_Do_UI.Controllers
                     string data = response.Content.ReadAsStringAsync().Result;
 
                     // Deserialize the data as a list of TaskModel
-                    var tasks = JsonConvert.DeserializeObject<List<TaskModel>>(data);
+                    var tasks = JsonConvert.DeserializeObject<TaskModel>(data);
 
                     // Get the first task from the list if it exists
-                    taskbyid = tasks?.FirstOrDefault();
+                    taskbyid = tasks;
+                    /*taskbyid = tasks?.FirstOrDefault();*/
                 }
 
                 return View("AddTask", taskbyid);
