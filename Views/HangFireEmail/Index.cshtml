@@ -1,0 +1,46 @@
+﻿@model ReminderModel
+
+<form method="post" action="@Url.Action("ScheduleEmailReminder", "HangFireEmail")">
+    <div class="form-group">
+        <input type="datetime-local" id="dateTime"
+               value="@(Model?.ReminderTime.ToString("yyyy-MM-ddTHH:mm") ?? DateTime.Now.AddMinutes(10).ToString("yyyy-MM-ddTHH:mm"))"
+               name="dateTime" class="form-control" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Schedule Email</button>
+</form>
+
+@if (TempData["ScheduleMessage"] != null)
+{
+    <div id="alertMessage3" class="alert alert-info">
+        @TempData["ScheduleMessage"]
+    </div>
+   
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("document is ready.");
+            setTimeout(function () {
+                $("#alertMessage3").fadeOut("slow"); // Hides message after 2 seconds
+            }, 2000);
+        });
+    </script>
+}
+@if (TempData["ScheduleMessageE"] != null)
+{
+   
+    <div id="alertMessage3" class="alert alert-danger">
+        @TempData["ScheduleMessageE"]
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("document is ready.");
+            setTimeout(function () {
+                $("#alertMessage3").fadeOut("slow"); // Hides message after 2 seconds
+            }, 2000);
+        });
+    </script>
+}

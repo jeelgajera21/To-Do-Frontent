@@ -1,7 +1,19 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using Hangfire;
+using To_Do_UI.Models;
+
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add Hangfire services to the container
+builder.Services.AddHangfire(config =>
+    config.UseSqlServerStorage("Data Source=MASCOT\\SQLEXPRESS;Initial Catalog=ToDoApp;Integrated Security=true;Encrypt=True;TrustServerCertificate=True")); // or another storage provider
+
+builder.Services.AddHangfireServer();  // Add Hangfire background job server
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddHttpContextAccessor();
 // Add session support
@@ -20,6 +32,9 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+
+app.UseHangfireDashboard();// 🔹 Hangfire Dashboard to monitor jobs
+app.UseHangfireServer();     // 🔹 Enables Hangfire job execution
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

@@ -13,13 +13,13 @@
                 <div class="card-body p-3">
         <form method="post" asp-controller="Task" asp-action="Save">
             <div class="mb-3 ">
-                <label  class="form-label">Task ID</label>
-                <input type="number" asp-for="TaskID" class="form-control" id="taskID" name="TaskID" readonly>
+                
+                <input type="hidden" asp-for="TaskID" class="form-control" id="taskID" name="TaskID" readonly>
             </div>
 
             <div class="mb-3">
-                <label for="userID" class="form-label">User ID</label>
-                <input type="number" asp-for="UserID" class="form-control" id="userID" name="UserID" >
+                
+                <input type="hidden" asp-for="UserID" class="form-control" id="userID" name="UserID" >
             </div>
 
             <div class="mb-3">
@@ -34,15 +34,17 @@
 
             <div class="mb-3">
                 <label for="dueDate" class="form-label">Due Date</label>
-                <input type="datetime-local" asp-for="DueDate" class="form-control" id="dueDate" name="DueDate" >
+                        <input type="datetime-local"  
+                               asp-for="DueDate" class="form-control" id="dueDate" name="DueDate">
+                        
             </div>
 
             <div class="mb-3">
                 <label for="priority" class="form-label">Priority</label>
                 <select class="form-select" asp-for="Priority" id="priority" name="Priority" >
-                    <option value="1">Low</option>
+                    <option value="3">Low</option>
                     <option value="2">Medium</option>
-                    <option value="3">High</option>
+                    <option value="1">High</option>
                 </select>
             </div>
 
@@ -57,19 +59,22 @@
 
             <div class="mb-3">
                 <label for="categoryID" class="form-label">Category ID</label>
-                <input type="number" asp-for="CategoryID" class="form-control" id="categoryID" name="CategoryID" >
+               @*  <input type="number" asp-for="CategoryID" class="form-control" id="categoryID" name="CategoryID" > *@
+                        <select class="form-select" asp-for="CategoryID" id="categoryID" name="CategoryID">
+                            
+                                <option disabled selected="true" value="0">Select Category</option>
+                          
+                            @foreach (var user in ViewBag.CategoryList)
+                                {
+                                    <option value=@user.CategoryID>@user.CategoryName</option>
+                                }
+                            </select>
+                           
+
+                        </select>
             </div>
 
-            <div class="mb-3">
-                <label for="createdAt" class="form-label">Created At</label>
-                <input type="datetime-local" asp-for="CreatedAt" class="form-control" id="createdAt" name="CreatedAt" readonly>
-            </div>
-
-            <div class="mb-3">
-                <label for="updatedAt" class="form-label">Updated At</label>
-                <input type="datetime-local" asp-for="UpdatedAt" class="form-control" id="updatedAt" name="UpdatedAt" readonly>
-            </div>
-
+           
             <button type="submit" class="btn btn-primary">Submit</button>
             <a class="btn btn-black"
                asp-controller="Task"

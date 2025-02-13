@@ -22,7 +22,7 @@ namespace To_Do_UI.Controllers
         }
 
         #endregion
-        public IActionResult Index()
+        public IActionResult Profile()
         {
             return View();
         }
@@ -106,6 +106,7 @@ namespace To_Do_UI.Controllers
 
 
         #endregion
+
         #region Register
 
         [HttpPost]
@@ -148,6 +149,38 @@ namespace To_Do_UI.Controllers
             HttpContext.Session.Clear();
             return RedirectToAction("Login", "User");
         }
+        #endregion
+
+
+        #region GetUserByLogin
+
+        [HttpGet]
+        [Route("GetUserByLogin")]
+        public IActionResult GetUserByLogin()
+        {
+            var userid = HttpContext.Session.GetInt32("UserID");
+            Console.WriteLine("userid : " + userid);
+
+            // Check if the user is logged in (replace "Guest" if you want to treat guests differently)
+            if (userid == null)
+            {
+                // Handle cases where the user is not logged in, e.g., redirect to login or show an error
+                return RedirectToAction("Login", "User"); // Assuming you have a login action
+            }
+            UserModel user = new UserModel();
+            HttpResponseMessage response = _client.GetAsync($"User/{userid}").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string data = response.Content.ReadAsStringAsync().Result;
+                /*  dynamic jsonObject = JsonConvert.DeserializeObject(data);*/
+
+                user = JsonConvert.DeserializeObject<UserModel>(data);
+            }
+
+
+            return View("Profile", user);
+        }
+
         #endregion
     }
 }

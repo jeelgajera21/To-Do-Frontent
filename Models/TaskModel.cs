@@ -10,7 +10,13 @@
         public int Priority { get; set; }
         public string Status { get; set; }
         public int CategoryID { get; set; }
+        public string? CategoryName { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
+    }
+    public class CategoryDropDownByUser
+    {
+        public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
     }
 }

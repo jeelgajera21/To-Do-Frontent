@@ -21,10 +21,10 @@ namespace To_Do_UI.Controllers
             };
         }
         #endregion
-        public IActionResult Index()
+      /*  public IActionResult Index()
         {
             return View();
-        }
+        }*/
 
         #region CategoryList
 
@@ -109,6 +109,18 @@ namespace To_Do_UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(CategoryModel category)
         {
+            // Retrieve UserID from Session
+            var userid = HttpContext.Session.GetInt32("UserID");
+            if (userid.HasValue)
+            {
+                category.UserID = userid.Value;
+            }
+            else
+            {
+                // Handle the case where UserID is null, e.g., redirect to login or show an error
+                return RedirectToAction("Login", "User");
+            }
+
             if (ModelState.IsValid)
             {
                 var json = JsonConvert.SerializeObject(category);
@@ -121,7 +133,7 @@ namespace To_Do_UI.Controllers
                     response = await _client.PutAsync($"Category", content);
 
                 if (response.IsSuccessStatusCode)
-                    return RedirectToAction("CategoryList");
+                    return RedirectToAction("CategoryListByUser");
             }
 
             return View("AddCategory", category);
@@ -133,11 +145,11 @@ namespace To_Do_UI.Controllers
         public async Task<IActionResult> Delete(int CategoryID)
         {
             var response = await _client.DeleteAsync($"Category/?CategoryID={CategoryID}");
-            return RedirectToAction("CategoryList");
+            return RedirectToAction("CategoryListByUser");
         }
 
         #endregion
 
-
+       
     }
 }

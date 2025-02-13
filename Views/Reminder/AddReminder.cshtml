@@ -16,18 +16,31 @@
 
                 <div class="mb-3">
                     <label class="form-label">Task ID</label>
-                    <input type="number" class="form-control" asp-for="TaskID" required>
+                    @* <input type="number" class="form-control" asp-for="TaskID" required> *@
+                    <select class="form-select" asp-for="TaskID" id="taskID" name="TaskID">
+
+                        <option disabled selected="true" value="0">Select Task</option>
+
+                        @foreach (var task in ViewBag.TaskList)
+                        {
+                            <option value=@task.TaskID>@task.Title</option>
+                        }
+                    </select>
+
+
+                    </select>
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Reminder Time</label>
-                    <input type="datetime-local" class="form-control" asp-for="ReminderTime" required>
+                    <input type="datetime-local" 
+                           name="ReminderTime" class="form-control" asp-for="ReminderTime" required>
                 </div>
 
-                <div class="mb-3 form-check">
+               @*  <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" asp-for="IsSent">
                     <label class="form-check-label">Is Sent</label>
-                </div>
+                </div> *@
 
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-save"></i> Save

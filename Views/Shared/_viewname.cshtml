@@ -1,0 +1,103 @@
+﻿@model ReminderModel
+
+<form method="post">
+    <div class="form-group">
+        <b>Task Title:</b>
+        <span class="hidden" id="TaskTitle">@Model.Title</span>
+        <input type="datetime-local" id="dateTime"
+               value="@(Model?.ReminderTime.ToString("yyyy-MM-ddTHH:mm") ?? DateTime.Now.AddMinutes(10).ToString("yyyy-MM-ddTHH:mm"))"
+               name="dateTime" class="form-control" required />
+    </div>
+
+    <button type="button" onclick="scheduleEmail()" class="btn btn-primary">Schedule Email</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+       function scheduleEmail() {
+           var dateTime = document.getElementById("dateTime").value;
+           var taskTitle = document.getElementById("TaskTitle").innerText;
+
+        var selectedDateTime = new Date(dateTime); // Convert to Date object
+    var currentDateTime = new Date(); // Get current Date object
+
+    // console.log("Selected DateTime:", selectedDateTime);
+    // console.log("Selected Title:", taskTitle);
+    // console.log("Current DateTime:", currentDateTime);
+    // console.log("Is selected datetime in the past?", selectedDateTime < currentDateTime);
+
+            if (selectedDateTime < currentDateTime) {
+                    Swal.fire({
+                        icon: "error",
+                        title: "Invalid Date",
+                        text: "Please select a future date and time!",
+                        timer:2000,
+                        showConfirmButton: false, // Removes the OK button
+                        //allowOutsideClick: false // Prevents closing by clicking outside
+                    });
+                    return;
+            }
+            else {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Scheduled!",
+                        text: "Notification will be sent at this time.",
+                        timer:2000,
+                        showConfirmButton: false, //Removes the OK button
+                        //allowOutsideClick: false // Prevents closing by clicking outside
+                    });
+            }
+
+
+           $.ajax({
+            url: "/HangFireEmail/schedule-email",
+               type: "POST",
+               data: { 
+                   dateTime: dateTime ,
+                   title: taskTitle
+               },
+               success: function (response) {
+               console.log("Response received with title = "+taskTitle); //Debugging
+               Swal.fire({
+                        icon: "success",
+                        title: "Scheduled!",
+                        text: `Notification will be sent at this ${dateTime}.`,
+                        timer:4000,
+                        //showConfirmButton: false, //Removes the OK button
+                        //allowOutsideClick: false // Prevents closing by clicking outside
+                    });
+           
+               }
+           });
+       }
+</script>
+@*  <div id="alertMessage3" class="alert alert-info">
+        @TempData["ScheduleMessage"]
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("document is ready.");
+            setTimeout(function () {
+                $("#alertMessage3").fadeOut("slow"); // Hides message after 2 seconds
+            }, 2000);
+        });
+    </script>
+
+
+    <div id="alertMessage3" class="alert alert-danger">
+        @TempData["ScheduleMessageE"]
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("document is ready.");
+            setTimeout(function () {
+                $("#alertMessage3").fadeOut("slow"); // Hides message after 2 seconds
+            }, 2000);
+        });
+    </script>
+ *@

@@ -7,7 +7,7 @@ using System.Text;
 
 namespace To_Do_UI.Controllers
 {
-    [CheckAccess]
+    //[CheckAccess]
     [Route("[controller]")]
     public class TaskController : Controller
     {
@@ -15,6 +15,8 @@ namespace To_Do_UI.Controllers
         private readonly HttpClient _client;
 
         #region Constructor
+
+       
         public TaskController(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -80,7 +82,7 @@ namespace To_Do_UI.Controllers
         public IActionResult AddTask(int? TaskID)
         {
             TaskModel taskbyid = null;
-
+            ViewBag.CategoryList = CategoryDropDown().Result;
             if (TaskID != null)
             {
                 HttpResponseMessage response = _client.GetAsync($"Task/{TaskID}").Result;
@@ -107,6 +109,17 @@ namespace To_Do_UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Save(TaskModel task)
         {
+            // Retrieve UserID from Session
+            var userid = HttpContext.Session.GetInt32("UserID");
+            if (userid.HasValue)
+            {
+                task.UserID = userid.Value;
+            }
+            else
+            {
+                // Handle the case where UserID is null, e.g., redirect to login or show an error
+                return RedirectToAction("Login", "User");
+            }
             if (ModelState.IsValid)
             {
                 var json = JsonConvert.SerializeObject(task);
@@ -119,7 +132,7 @@ namespace To_Do_UI.Controllers
                     response = await _client.PutAsync($"Task", content);
 
                 if (response.IsSuccessStatusCode)
-                    return RedirectToAction("TaskList");
+                    return RedirectToAction("TaskListByUser");
             }
           
             return View("AddTask", task);
@@ -127,11 +140,40 @@ namespace To_Do_UI.Controllers
         #endregion
 
         #region Delete Task
+
+        [Route("DeleteTask/{TaskID}")]
         public async Task<IActionResult> DeleteTask(int TaskID)
         {
             var response = await _client.DeleteAsync($"Task/?TaskID={TaskID}");
-            return RedirectToAction("TaskList");
+            return RedirectToAction("TaskListByUser");
         }
         #endregion
+
+
+        #region CategoryDropDown
+
+        [HttpGet]
+        [Route("CategoryDDListByUser")]
+        public async Task<List<CategoryDropDownByUser>> CategoryDropDown()
+        {
+            var userid = HttpContext.Session.GetInt32("UserID");
+            Console.WriteLine("userid : " + userid);
+
+
+            List<CategoryDropDownByUser> category = new List<CategoryDropDownByUser>();
+            HttpResponseMessage response = _client.GetAsync($"Category/dd-by-user/{userid}").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                string data = response.Content.ReadAsStringAsync().Result;
+                category = JsonConvert.DeserializeObject<List<CategoryDropDownByUser>>(data);
+                Console.WriteLine(category);
+            }
+            return category;
+        }
+
+        #endregion
+
+
+
     }
 }

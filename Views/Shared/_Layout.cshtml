@@ -54,7 +54,7 @@
         <div class="d-flex align-items-center justify-content-between">
             <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
                 <img src="~/assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">TO Do</span>
+                <span class="d-none d-lg-block">To Do</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -149,49 +149,49 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
-            <li class="nav-item">
+           @*  <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Task" asp-action="TaskList">
                     <i class="ri ri-check-double-fill"></i>
                     <span>Task</span>
                 </a>
-            </li><!-- End Task Page Nav -->
+            </li><!-- End Task Page Nav --> *@
             <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Task" asp-action="TaskListByUser">
                     <i class="ri ri-check-double-fill"></i>
-                    <span>Task by User</span>
+                    <span>Task</span>
                 </a>
             </li><!-- End Task Page Nav -->
             
-            <li class="nav-item">
+            @* <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Category" asp-action="CategoryList">
                     <i class="bi bi-folder"></i>
                     <span>Category</span>
                 </a>
-            </li><!-- End Task Page Nav -->
+            </li><!-- End Task Page Nav --> *@
             <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Category" asp-action="CategoryListByUser">
                     <i class="ri ri-check-double-fill"></i>
-                    <span>Category by User</span>
+                    <span>Category</span>
                 </a>
             </li><!-- End Task Page Nav -->
             
-            <li class="nav-item">
+            @* <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Reminder" asp-action="ReminderList">
                     <i class="ri ri-check-double-fill"></i>
                     <span>Reminder</span>
                 </a>
-            </li><!-- End Task Page Nav -->
+            </li><!-- End Task Page Nav --> *@
             <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Reminder" asp-action="ReminderListByUser">
                     <i class="ri ri-check-double-fill"></i>
-                    <span>Reminder by User</span>
+                    <span>Reminder</span>
                 </a>
             </li><!-- End Task Page Nav -->
 
             <li class="nav-heading">Pages</li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" asp-controller="Home" asp-action="Profile">
+                <a class="nav-link collapsed" asp-controller="User" asp-action="GetUserByLogin">
                     <i class="bi bi-person"></i>
                     <span>Profile</span>
                 </a>
@@ -205,7 +205,7 @@
             </li><!-- End F.A.Q Page Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-contact.html">
+                <a class="nav-link collapsed" asp-controller="Email" asp-action="Index">
                     <i class="bi bi-envelope"></i>
                     <span>Contact</span>
                 </a>
@@ -224,7 +224,15 @@
                     <span>Login</span>
                 </a>
             </li><!-- End Login Page Nav -->
-
+            <li class="nav-item">
+                <a asp-controller="HangFireEmail" asp-action="Index">
+                    <i class="bi bi-mial"></i><span>HangFire</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="hangfire">HangFire Dashboard</a>
+            </li>
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" href="pages-error-404.html">
                     <i class="bi bi-dash-circle"></i>
@@ -246,13 +254,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-           @*  <h1>Dashboard</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Dashboard</li>
-                </ol>
-            </nav> *@
+           
             @await Html.PartialAsync("_Breadcrumb")
 
         </div><!-- End Page Title -->
@@ -266,7 +268,7 @@
       
 
     </main><!-- End #main -->
-    <!-- ======= Footer ======= -->
+   @*  <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
             &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
@@ -278,7 +280,7 @@
             <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
-    </footer><!-- End Footer -->
+    </footer><!-- End Footer --> *@
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

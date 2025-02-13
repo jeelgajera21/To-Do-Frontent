@@ -1,0 +1,52 @@
+﻿@model To_Do_UI.Models.EmailModel;  //Apply Change your Project Name
+
+
+    <div class="pagetitle">
+    </div><!-- End Page Title -->
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Email</h5>
+
+            <!-- General Form Elements -->
+            <form asp-controller="Email" asp-action="Index">
+                <div class="form-group">
+                    <label for="inputText">Email</label>
+                    <div>
+                        <input asp-for="Email" type="text" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Subject"></label>
+                    <input asp-for="Subject" class="form-control" />
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Body"></label>
+                    <input asp-for="Body" class="form-control" />
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+
+                @* <div class="form-group">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+                </div> *@
+
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-info">
+                        @ViewBag.Message
+                    </div>
+                }
+                <div class="text-center">
+
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
