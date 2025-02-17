@@ -15,8 +15,8 @@
                 <input type="hidden" asp-for="ReminderID" />
 
                 <div class="mb-3">
-                    <label class="form-label">Task ID</label>
-                    <input type="number" class="form-control" asp-for="TaskID" required>
+                    <label class="fs-5">Task Title : @Model.Title</label>
+                    <input type="hidden" class="form-control" asp-for="TaskID">
                     @* <select class="form-select" asp-for="TaskID" id="taskID" name="TaskID">
 
                         <option disabled selected="true" value="0">Select Task</option>
@@ -34,7 +34,7 @@
                 <div class="mb-3">
                     <label class="form-label">Reminder Time</label>
                     <input type="datetime-local" 
-                           name="ReminderTime" class="form-control" asp-for="ReminderTime" required>
+                           name="ReminderTime" class="form-control" asp-for="ReminderTime" >
                 </div>
 
                @*  <div class="mb-3 form-check">

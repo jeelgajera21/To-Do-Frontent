@@ -5,6 +5,7 @@ using System.Net.Http;
 using To_Do_UI.Models;
 using System.Text;
 using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace To_Do_UI.Controllers
 {
@@ -12,22 +13,14 @@ namespace To_Do_UI.Controllers
     [Route("[controller]")]
     public class TaskController : Controller
     {
-        private readonly IConfiguration _configuration;
+        private readonly ApiAuthBearer _apiAuthBearer;
         private readonly HttpClient _client;
 
-        #region Constructor
-
-       
-        public TaskController(IConfiguration configuration)
+        public TaskController(ApiAuthBearer apiAuthBearer)
         {
-            _configuration = configuration;
-            _client = new HttpClient
-            {
-                BaseAddress = new System.Uri(_configuration["WebApiBaseUrl"])
-            };
+            _apiAuthBearer = apiAuthBearer;
+            _client = _apiAuthBearer.GetHttpClient();
         }
-       
-        #endregion
 
         #region List of Tasks
         [HttpGet]
@@ -53,7 +46,7 @@ namespace To_Do_UI.Controllers
 
         {
             var userid = HttpContext.Session.GetInt32("UserID");
-            Console.WriteLine("userid : " + userid);
+            var token = HttpContext.Session.GetString("Token");
 
             // Check if the user is logged in (replace "Guest" if you want to treat guests differently)
             if (userid == null)
@@ -62,6 +55,7 @@ namespace To_Do_UI.Controllers
                 return RedirectToAction("Login", "User"); // Assuming you have a login action
             }
             List<TaskModel> task = new List<TaskModel>();
+            
             HttpResponseMessage response = _client.GetAsync($"Task/by-user/{userid}").Result;
             if (response.IsSuccessStatusCode)
             {

@@ -1,4 +1,5 @@
 ﻿using Hangfire;
+using To_Do_UI;
 using To_Do_UI.Models;
 
 
@@ -15,7 +16,20 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 builder.Services.AddDistributedMemoryCache();
+
+// Register IHttpContextAccessor (if not already registered)
 builder.Services.AddHttpContextAccessor();
+
+// Register HttpClientFactory
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+    client.BaseAddress = new Uri(builder.Configuration["WebApiBaseUrl"]);
+});
+
+// Register ApiAuthBearer as a Singleton
+builder.Services.AddSingleton<ApiAuthBearer>();
+
+
 // Add session support
 builder.Services.AddSession(options =>
 {

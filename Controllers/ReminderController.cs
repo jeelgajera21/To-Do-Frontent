@@ -1,29 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Text;
 using To_Do_UI.Models;
 
 namespace To_Do_UI.Controllers
 {
     [Route("[controller]")]
+    
     public class ReminderController : Controller
     {
 
 
-        private readonly IConfiguration _configuration;
+        private readonly ApiAuthBearer _apiAuthBearer;
         private readonly HttpClient _client;
 
-        #region Constructor
-        public ReminderController(IConfiguration configuration)
+        public ReminderController(ApiAuthBearer apiAuthBearer)
         {
-            _configuration = configuration;
-            _client = new HttpClient
-            {
-
-                BaseAddress = new System.Uri(_configuration["WebApiBaseUrl"])
-            };
+            _apiAuthBearer = apiAuthBearer;
+            _client = _apiAuthBearer.GetHttpClient();
         }
-        #endregion
+
         public IActionResult Index()
         {
             return View();
@@ -56,9 +53,10 @@ namespace To_Do_UI.Controllers
         public IActionResult ReminderListByUser()
         {
             var userid = HttpContext.Session.GetInt32("UserID");
-            Console.WriteLine("userid : " + userid);
+            var token = HttpContext.Session.GetString("Token");
 
-            
+
+
 
             // Check if the user is logged in (replace "Guest" if you want to treat guests differently)
             if (userid == null)
@@ -67,6 +65,7 @@ namespace To_Do_UI.Controllers
                 return RedirectToAction("Login", "User"); // Assuming you have a login action
             }
             List<ReminderModel> reminder = new List<ReminderModel>();
+            
             HttpResponseMessage response = _client.GetAsync($"Reminder/by-user/{userid}").Result;
             if (response.IsSuccessStatusCode)
             {

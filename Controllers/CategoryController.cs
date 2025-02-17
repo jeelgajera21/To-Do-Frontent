@@ -1,6 +1,7 @@
 ﻿using Azure;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Net;
 using System.Text;
 using To_Do_UI.Models;
@@ -10,23 +11,34 @@ namespace To_Do_UI.Controllers
     [Route("[controller]")]
     public class CategoryController : Controller
     {
-        private readonly IConfiguration _configuration;
+        /* private readonly IConfiguration _configuration;
+         private readonly HttpClient _client;
+
+
+         #region Constructor
+         public CategoryController(IConfiguration configuration)
+         {
+             var token = HttpContext.Session.GetString("Token");
+
+             _configuration = configuration;
+             _client = new HttpClient
+             {
+                 BaseAddress = new System.Uri(_configuration["WebApiBaseUrl"])
+             };
+             _client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+         }
+         #endregion*/
+        private readonly ApiAuthBearer _apiAuthBearer;
         private readonly HttpClient _client;
 
-        #region Constructor
-        public CategoryController(IConfiguration configuration)
+        public CategoryController(ApiAuthBearer apiAuthBearer)
         {
-            _configuration = configuration;
-            _client = new HttpClient
-            {
-                BaseAddress = new System.Uri(_configuration["WebApiBaseUrl"])
-            };
+            _apiAuthBearer = apiAuthBearer;
+            _client = _apiAuthBearer.GetHttpClient();
         }
-        #endregion
-      /*  public IActionResult Index()
-        {
-            return View();
-        }*/
+
+
 
         #region CategoryList
 
@@ -34,6 +46,7 @@ namespace To_Do_UI.Controllers
         /*[Route("categorylist")]*/
         public IActionResult CategoryList()
         {
+            
             List<CategoryModel> category = new List<CategoryModel>();
             HttpResponseMessage response = _client.GetAsync("Category").Result;
             if (response.IsSuccessStatusCode)
@@ -69,6 +82,11 @@ namespace To_Do_UI.Controllers
                 return RedirectToAction("Login", "User"); // Assuming you have a login action
             }
             List<CategoryModel> category = new List<CategoryModel>();
+
+            // Set up HttpClient with Authorization Header
+            //_client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+            
+
             HttpResponseMessage response = _client.GetAsync($"Category/by-user/{userid}").Result;
             if (response.IsSuccessStatusCode)
             {
