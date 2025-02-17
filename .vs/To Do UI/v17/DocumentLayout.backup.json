@@ -1,16 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Sem 6\\ADV .NET\\To Do UI\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\reminder\\addreminderbytask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\reminder\\addreminderbytask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\reminder\\addreminder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\reminder\\addreminder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
@@ -18,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -27,32 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddReminderByTask.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminderByTask.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reminder\\AddReminderByTask.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminderByTask.cshtml",
-              "RelativeToolTip": "Views\\Reminder\\AddReminderByTask.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-17T07:49:56.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddReminder.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminder.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reminder\\AddReminder.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminder.cshtml",
-              "RelativeToolTip": "Views\\Reminder\\AddReminder.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-17T07:48:46.789Z",
-              "EditorCaption": ""
             }
           ]
         }

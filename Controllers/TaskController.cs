@@ -13,6 +13,9 @@ namespace To_Do_UI.Controllers
     [Route("[controller]")]
     public class TaskController : Controller
     {
+        #region constructor DI
+
+       
         private readonly ApiAuthBearer _apiAuthBearer;
         private readonly HttpClient _client;
 
@@ -21,6 +24,7 @@ namespace To_Do_UI.Controllers
             _apiAuthBearer = apiAuthBearer;
             _client = _apiAuthBearer.GetHttpClient();
         }
+        #endregion
 
         #region List of Tasks
         [HttpGet]
@@ -39,7 +43,11 @@ namespace To_Do_UI.Controllers
 
             return View("TaskList", task);
         }
+        #endregion
 
+        #region Task list by user
+
+        
         [HttpGet]
         [Route("TaskListByUser")]
         public async Task<IActionResult> TaskListByUser()
@@ -173,7 +181,6 @@ namespace To_Do_UI.Controllers
         }
         #endregion
 
-
         #region CategoryDropDown
 
         [HttpGet]
@@ -197,10 +204,11 @@ namespace To_Do_UI.Controllers
 
         #endregion
 
+        #region Index
         public IActionResult Index()
         {
             return View();
         }
-
+        #endregion
     }
 }

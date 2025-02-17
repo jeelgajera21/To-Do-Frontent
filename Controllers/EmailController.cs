@@ -7,15 +7,23 @@ using To_Do_UI.Models;
 namespace To_Do_UI.Controllers
 {
     [Route("[controller]")]
+    [CheckAccess]
     public class EmailController : Controller
     {
+        #region Constructor DI
+
+        
         private readonly MailSettings _mailSettings;
 
         public EmailController(IOptions<MailSettings> mailSettings)
         {
             _mailSettings = mailSettings.Value;
         }
+        #endregion
 
+        #region Index/testing page
+
+        
         public IActionResult Index(EmailModel model)
         {
 
@@ -51,6 +59,6 @@ namespace To_Do_UI.Controllers
 
             return View(model);
         }
-
+        #endregion
     }
 }

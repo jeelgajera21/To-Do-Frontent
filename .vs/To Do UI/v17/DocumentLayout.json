@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Sem 6\\ADV .NET\\To Do UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\reminder\\addreminderbytask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\reminder\\addreminderbytask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\reminder\\addreminder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\reminder\\addreminder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\checkaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:checkaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\apiauthbearer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:apiauthbearer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -31,27 +35,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddReminderByTask.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminderByTask.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reminder\\AddReminderByTask.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminderByTask.cshtml",
-              "RelativeToolTip": "Views\\Reminder\\AddReminderByTask.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-17T07:49:56.213Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:49:51.641Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddReminder.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminder.cshtml",
-              "RelativeDocumentMoniker": "Views\\Reminder\\AddReminder.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminder.cshtml",
-              "RelativeToolTip": "Views\\Reminder\\AddReminder.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-17T07:48:46.789Z",
+              "Title": "CheckAccess.cs",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\CheckAccess.cs",
+              "RelativeDocumentMoniker": "CheckAccess.cs",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\CheckAccess.cs",
+              "RelativeToolTip": "CheckAccess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:49:01.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiAuthBearer.cs",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\ApiAuthBearer.cs",
+              "RelativeDocumentMoniker": "ApiAuthBearer.cs",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\ApiAuthBearer.cs",
+              "RelativeToolTip": "ApiAuthBearer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T12:48:09.145Z",
               "EditorCaption": ""
             }
           ]

@@ -4,6 +4,7 @@ namespace To_Do_UI
 {
     public class ApiAuthBearer
     {
+        #region Constructor Dependency Injection
         private readonly HttpClient _client;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
@@ -12,7 +13,9 @@ namespace To_Do_UI
             _httpContextAccessor = httpContextAccessor;
             _client = httpClientFactory.CreateClient("ApiClient");
         }
+        #endregion
 
+        #region GetHttpClient
         public HttpClient GetHttpClient()
         {
             var token = _httpContextAccessor.HttpContext?.Session.GetString("Token");
@@ -25,5 +28,6 @@ namespace To_Do_UI
 
             return _client;
         }
+        #endregion
     }
 }

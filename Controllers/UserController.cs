@@ -10,10 +10,11 @@ namespace To_Do_UI.Controllers
 {
     public class UserController : Controller
     {
+        #region Constructor DI
         private readonly IConfiguration _configuration;
         private readonly HttpClient _client;
 
-        #region Constructor
+
         public UserController(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -24,10 +25,15 @@ namespace To_Do_UI.Controllers
         }
 
         #endregion
+
+        #region Profile
+
+
         public IActionResult Profile()
         {
             return View();
         }
+        #endregion
 
         #region Login
 
@@ -67,12 +73,6 @@ namespace To_Do_UI.Controllers
                             HttpContext.Session.SetString("Token", userResponse.Token);
 
 
-                            /*Console.WriteLine("Session UserID: " + HttpContext.Session.GetInt32("UserID"));
-                            Console.WriteLine("Session UserName: " + HttpContext.Session.GetString("UserName"));
-                            Console.WriteLine("Session Email: " + HttpContext.Session.GetString("Email"));
-                            Console.WriteLine("Session Name: " + HttpContext.Session.GetString("Name"));*/
-                            Console.WriteLine("Session Token: " + HttpContext.Session.GetString("Token"));
-
                             if (!userResponse.IsActive)
                             {
                                 ModelState.AddModelError("", "Your account is inactive. Please contact support.");
@@ -86,7 +86,7 @@ namespace To_Do_UI.Controllers
                     ModelState.AddModelError("", "Invalid response from server.");
                     ViewBag.loginmsg = "Invalid response from server.";
                 }
-                
+
                 else
                 {
                     ModelState.AddModelError("", "Invalid login credentials.");
@@ -105,7 +105,7 @@ namespace To_Do_UI.Controllers
                 ModelState.AddModelError("", "An error occurred while processing your request.");
                 ViewBag.loginmsg = "An error occurred while processing your request.";
             }
-           
+
             return View("Login", userLogin);
         }
 
@@ -161,7 +161,6 @@ namespace To_Do_UI.Controllers
         }
         #endregion
 
-
         #region GetUserByLogin
 
         [HttpGet]
@@ -189,12 +188,11 @@ namespace To_Do_UI.Controllers
                 user = JsonConvert.DeserializeObject<UserModel>(data);
             }
 
-            
+
             return View("Profile", user);
         }
 
         #endregion
 
-       
     }
 }

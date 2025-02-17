@@ -7,10 +7,12 @@ using To_Do_UI.Models;
 namespace To_Do_UI.Controllers
 {
     [Route("[controller]")]
-    
+    [CheckAccess]
     public class ReminderController : Controller
     {
+        #region Constructor DI
 
+        
 
         private readonly ApiAuthBearer _apiAuthBearer;
         private readonly HttpClient _client;
@@ -21,10 +23,16 @@ namespace To_Do_UI.Controllers
             _client = _apiAuthBearer.GetHttpClient();
         }
 
+        #endregion
+
+        #region Index
+
+        
         public IActionResult Index()
         {
             return View();
         }
+        #endregion
 
         #region ReminderList
 
@@ -47,6 +55,10 @@ namespace To_Do_UI.Controllers
 
 
         }
+
+        #endregion
+
+        #region ReminderByUser
 
         [Route("ReminderListByUser")]
         [HttpGet]
@@ -78,27 +90,30 @@ namespace To_Do_UI.Controllers
 
             return View("ReminderList", reminder);
         }
+        #endregion
 
-        
-       /* public async Task<IActionResult> ReminderListByUserid(int ReminderID)
-        {
-            var userid = HttpContext.Session.GetInt32("UserID");
-            Console.WriteLine("userid : " + userid);
+        #region temp
 
-            
-            ReminderModel reminder = new ReminderModel();
-            HttpResponseMessage response =  _client.GetAsync($"Reminder/{ReminderID}").Result;
-            if (response.IsSuccessStatusCode)
-            {
-                string data = response.Content.ReadAsStringAsync().Result;
-                *//*  dynamic jsonObject = JsonConvert.DeserializeObject(data);*//*
+       
+        /* public async Task<IActionResult> ReminderListByUserid(int ReminderID)
+         {
+             var userid = HttpContext.Session.GetInt32("UserID");
+             Console.WriteLine("userid : " + userid);
 
-                reminder = JsonConvert.DeserializeObject<ReminderModel>(data);
-            }
-            
-            
-            return RedirectToAction("Index","HangFireEmail",reminder);
-        }*/
+
+             ReminderModel reminder = new ReminderModel();
+             HttpResponseMessage response =  _client.GetAsync($"Reminder/{ReminderID}").Result;
+             if (response.IsSuccessStatusCode)
+             {
+                 string data = response.Content.ReadAsStringAsync().Result;
+                 *//*  dynamic jsonObject = JsonConvert.DeserializeObject(data);*//*
+
+                 reminder = JsonConvert.DeserializeObject<ReminderModel>(data);
+             }
+
+
+             return RedirectToAction("Index","HangFireEmail",reminder);
+         }*/
 
         #endregion
 
@@ -129,7 +144,9 @@ namespace To_Do_UI.Controllers
             }
             return View("AddReminder", new ReminderModel());
         }
+        #endregion
 
+        #region Add Reminder by Task
         [HttpGet("{RTaskID}")]
         [Route("AddReminderTaskID")]
         public IActionResult AddReminderTaskID(int RTaskID)

@@ -10,8 +10,11 @@ using Newtonsoft.Json;
 namespace To_Do_UI.Controllers
 {
     [Route("[controller]")]
+    [CheckAccess]
     public class HangFireEmailController : Controller
     {
+        #region Constructor DI
+
         private readonly IBackgroundJobClient _backgroundJobClient;
         private readonly IRecurringJobManager _recurringJobManager;
         private readonly MailSettings _mailSettings;
@@ -43,10 +46,14 @@ namespace To_Do_UI.Controllers
             };
 
             // Log the values to confirm they are being injected
-            Console.WriteLine($"MailSettings - Mail: {_mailSettings.Mail}, Host: {_mailSettings.Host}, Port: {_mailSettings.Port}");
+            //Console.WriteLine($"MailSettings - Mail: {_mailSettings.Mail}, Host: {_mailSettings.Host}, Port: {_mailSettings.Port}");
         }
-        
-        
+
+        #endregion
+
+        #region simple mail
+
+       
         // 🔹 Fire-and-Forget Job (Runs Once Immediately)
         [HttpPost("send-email")]
         public IActionResult SendEmailReminder(string email)
@@ -58,45 +65,11 @@ namespace To_Do_UI.Controllers
             ViewBag.ShowAlert = true; // Set flag
             return View("Index");
         }
+        #endregion
 
-        // 🔹 Delayed Job (Runs After a Delay)
+        #region Schedule-email
 
-        /*
-        [HttpPost("schedule-email")]
-            public IActionResult ScheduleEmailReminder(string dateTime)
-            {
-                    var Name = HttpContext.Session.GetString("Name");
-                    var email = HttpContext.Session.GetString("Email");
-                    var userId = HttpContext.Session.GetInt32("UserID");
-
-
-                    if (Name=="noName" || email == "noEmail")
-                    {
-                        return RedirectToAction("Login", "User");
-                    }
-
-
-
-                    if (!DateTime.TryParseExact(dateTime, "yyyy-MM-ddTHH:mm",
-                    CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime scheduledDateTime))
-                {
-                    return BadRequest("Invalid date-time format. Use 'yyyy-MM-ddTHH:mm'.");
-                }
-
-                DateTime now = DateTime.Now;
-                if (scheduledDateTime <= now)
-                {
-                    return BadRequest("Scheduled time must be in the future.");
-                }
-
-                TimeSpan delay = scheduledDateTime - now;
-                _backgroundJobClient.Schedule(() => SendEmail(email, $"Scheduled Email Reminder", $"Dear {Name},\r\n\r\nThis is a friendly reminder for your scheduled event.\r\n\r\n📅 Date & Time: {scheduledDateTime}\r\n📌 Details: [Mention any important details related to the event or task]\r\n\r\nIf you have any questions or need to reschedule, feel free to reach out.\r\n\r\nBest regards,\r\nTo-Do\r\nMascot"), delay);
-
-
-                    ViewBag.ScheduleMessage = $"Email scheduled for {scheduledDateTime:dd-MM-yyyy HH:mm}";
-                    return View("Index");
-                }
-        */
+       
         [HttpPost("schedule-email")]
         public IActionResult ScheduleEmailReminder(string dateTime,string Title)
         {
@@ -133,9 +106,11 @@ namespace To_Do_UI.Controllers
             TempData["ScheduleMessage"] = $"Email scheduled for {scheduledDateTime:dd-MM-yyyy HH:mm}";
             return RedirectToAction("ReminderListByUser", "Reminder"); // Redirect ensures TempData is passed correctly
 
-            //return Json(new {message= $"Email scheduled for {scheduledDateTime:dd-MM-yyyy HH:mm}" }); // Redirect ensures TempData is passed correctly
+            
         }
+        #endregion
 
+        #region daily-Email/Recurring-mail
 
 
         /*
@@ -152,6 +127,9 @@ namespace To_Do_UI.Controllers
                     return Ok("Daily email reminder set at 9 AM!");
                 }*/
 
+        #endregion
+
+        #region Actual Mail Logic
 
         // 🔹 Email Sending Logic (Mock)
         [HttpPost]
@@ -229,9 +207,11 @@ namespace To_Do_UI.Controllers
         }
 
 
+        #endregion
 
+        #region ReminderByView
 
-
+        
         [Route("RbyRkey")]
         public async Task<IActionResult> RbyRkey(int ReminderID)
         {
@@ -253,6 +233,7 @@ namespace To_Do_UI.Controllers
             return RedirectToAction("Index"); // Redirect to Index() where it handles ReminderModel
            // return PartialView("_viewname"); // Return PartialView to render Index.cshtml
         }
+        #endregion
 
     }
 }

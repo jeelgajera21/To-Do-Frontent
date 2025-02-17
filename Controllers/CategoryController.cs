@@ -9,26 +9,12 @@ using To_Do_UI.Models;
 namespace To_Do_UI.Controllers
 {
     [Route("[controller]")]
+    [CheckAccess]
     public class CategoryController : Controller
     {
-        /* private readonly IConfiguration _configuration;
-         private readonly HttpClient _client;
+        #region construstor DI
 
-
-         #region Constructor
-         public CategoryController(IConfiguration configuration)
-         {
-             var token = HttpContext.Session.GetString("Token");
-
-             _configuration = configuration;
-             _client = new HttpClient
-             {
-                 BaseAddress = new System.Uri(_configuration["WebApiBaseUrl"])
-             };
-             _client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
-         }
-         #endregion*/
+        
         private readonly ApiAuthBearer _apiAuthBearer;
         private readonly HttpClient _client;
 
@@ -38,7 +24,7 @@ namespace To_Do_UI.Controllers
             _client = _apiAuthBearer.GetHttpClient();
         }
 
-
+        #endregion
 
         #region CategoryList
 
@@ -205,6 +191,5 @@ namespace To_Do_UI.Controllers
 
         #endregion
 
-       
-    }
+       }
 }
