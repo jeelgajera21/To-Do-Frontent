@@ -26,5 +26,7 @@
         public string UserName { get; set; }
         public string Email { get; set; }
         public bool IsActive { get; set; }
+        public string? Token { get; set; }
+        public bool? LoginStatus { get; set; }
     }
 }

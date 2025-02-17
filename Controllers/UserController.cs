@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using To_Do_UI.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace To_Do_UI.Controllers
 {
@@ -62,11 +64,14 @@ namespace To_Do_UI.Controllers
                             HttpContext.Session.SetString("UserName", userResponse.UserName);
                             HttpContext.Session.SetString("Email", userResponse.Email);
                             HttpContext.Session.SetString("Name", userResponse.Name);
+                            HttpContext.Session.SetString("Token", userResponse.Token);
 
-                            Console.WriteLine("Session UserID: " + HttpContext.Session.GetInt32("UserID"));
+
+                            /*Console.WriteLine("Session UserID: " + HttpContext.Session.GetInt32("UserID"));
                             Console.WriteLine("Session UserName: " + HttpContext.Session.GetString("UserName"));
                             Console.WriteLine("Session Email: " + HttpContext.Session.GetString("Email"));
-                            Console.WriteLine("Session Name: " + HttpContext.Session.GetString("Name"));
+                            Console.WriteLine("Session Name: " + HttpContext.Session.GetString("Name"));*/
+                            Console.WriteLine("Session Token: " + HttpContext.Session.GetString("Token"));
 
                             if (!userResponse.IsActive)
                             {
@@ -79,23 +84,28 @@ namespace To_Do_UI.Controllers
                     }
 
                     ModelState.AddModelError("", "Invalid response from server.");
+                    ViewBag.loginmsg = "Invalid response from server.";
                 }
+                
                 else
                 {
                     ModelState.AddModelError("", "Invalid login credentials.");
+                    ViewBag.loginmsg = "Invalid login credentials.";
                 }
             }
             catch (JsonException jsonEx) // Catch deserialization errors
             {
                 Console.WriteLine("JSON Deserialization Error: " + jsonEx.Message);
                 ModelState.AddModelError("", "Invalid response format from server.");
+                ViewBag.loginmsg = "Invalid response format from server.";
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Exception: " + ex.Message);
                 ModelState.AddModelError("", "An error occurred while processing your request.");
+                ViewBag.loginmsg = "An error occurred while processing your request.";
             }
-
+           
             return View("Login", userLogin);
         }
 
@@ -159,11 +169,13 @@ namespace To_Do_UI.Controllers
         public IActionResult GetUserByLogin()
         {
             var userid = HttpContext.Session.GetInt32("UserID");
-            Console.WriteLine("userid : " + userid);
+            /*Console.WriteLine("userid : " + userid);*/
 
             // Check if the user is logged in (replace "Guest" if you want to treat guests differently)
             if (userid == null)
             {
+                //ViewBag.loginmsg = "login successful";
+
                 // Handle cases where the user is not logged in, e.g., redirect to login or show an error
                 return RedirectToAction("Login", "User"); // Assuming you have a login action
             }
@@ -177,10 +189,12 @@ namespace To_Do_UI.Controllers
                 user = JsonConvert.DeserializeObject<UserModel>(data);
             }
 
-
+            
             return View("Profile", user);
         }
 
         #endregion
+
+       
     }
 }

@@ -152,7 +152,7 @@ namespace To_Do_UI.Controllers
                     reminderbyid = reminders;
                 }
 
-                return View("AddReminder", reminderbyid);
+                return View("AddReminderByTask", reminderbyid);
             }
             return RedirectToAction("TaskListByUser", "Task" );
         }
@@ -183,9 +183,18 @@ namespace To_Do_UI.Controllers
 
         #region Delete Reminder
 
+        [Route("DeleteReminder/{ReminderID}")]
         public async Task<IActionResult> Delete(int ReminderID)
         {
             var response = await _client.DeleteAsync($"Reminder/?ReminderID={ReminderID}");
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["Msg"] = "Deleted Successfully"; // Use TempData instead
+            }
+            else
+            {
+                TempData["Msg"] = "Delete Failed";
+            }
             return RedirectToAction("ReminderListByUser");
         }
 

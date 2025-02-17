@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Net;
 using System.Text;
 using To_Do_UI.Models;
 
@@ -53,10 +55,15 @@ namespace To_Do_UI.Controllers
         public IActionResult CategoryListByUser()
         {
             var userid = HttpContext.Session.GetInt32("UserID");
+            var token = HttpContext.Session.GetString("Token");
+
+          
+
+
             Console.WriteLine("userid : " + userid);
 
             // Check if the user is logged in (replace "Guest" if you want to treat guests differently)
-            if (userid == null)
+            if (userid == null && token==null)
             {
                 // Handle cases where the user is not logged in, e.g., redirect to login or show an error
                 return RedirectToAction("Login", "User"); // Assuming you have a login action
@@ -134,17 +141,47 @@ namespace To_Do_UI.Controllers
 
                 if (response.IsSuccessStatusCode)
                     return RedirectToAction("CategoryListByUser");
+
+                else if (response.StatusCode == HttpStatusCode.BadRequest)
+                {
+                    // Parse API error response
+                    var data = await response.Content.ReadAsStringAsync();
+                    var result = JsonConvert.DeserializeObject<dynamic>(data);
+                    Console.WriteLine(result);
+                    if (result.errors != null)
+                    {
+                        foreach (var errorKey in result.errors)
+                        {
+                            string fieldName = errorKey.Name; // Get field name like "CategoryName"
+                            foreach (var errorMessage in errorKey.Value)
+                            {
+                                ModelState.AddModelError(fieldName, errorMessage.ToString());
+                            }
+                        }
+                    }
+
+                    return View("AddCategory", category); // Return the same view with validation errors
+                }
             }
+            
 
             return View("AddCategory", category);
         }
         #endregion
 
         #region Delete Category
-
+        [Route("DeleteCat/{CategoryID}")]
         public async Task<IActionResult> Delete(int CategoryID)
         {
             var response = await _client.DeleteAsync($"Category/?CategoryID={CategoryID}");
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["Msg"] = "Deleted Successfully"; // Use TempData instead
+            }
+            else
+            {
+                TempData["Msg"] = "Delete Failed";
+            }
             return RedirectToAction("CategoryListByUser");
         }
 

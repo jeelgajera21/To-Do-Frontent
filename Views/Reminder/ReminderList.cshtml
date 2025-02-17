@@ -27,10 +27,10 @@
             <table class="table table-hover table-header-fixed">
                 <thead>
                     <tr>
-                        
+
                         <th scope="col">Task Title</th>
                         <th scope="col">Reminder Time</th>
-                       
+
                         <th scope="col" class="text-center">Notification</th>
                         <th scope="col" class="text-center">Actions</th>
                     </tr>
@@ -39,37 +39,36 @@
                     @foreach (var reminder in Model)
                     {
                         <tr>
-                            
+
                             <td>@reminder.Title</td>
                             <td>@reminder.ReminderTime.ToString("dd-MM-yyyy HH:mm tt")</td>
                             <td class="text-center justify-content-center">
                                 <!-- add reminder Button -->
-                                <button type="button" class="btn btn-success rounded-pill w-75"    
-                                  
+                                <button type="button" class="btn btn-success rounded-pill w-75"
                                         onclick="loadpartial(@reminder.ReminderID)">
                                     Add
                                 </button>
 
                             </td>
                             <td class="text-center d-flex  justify-content-center">
-                               
-                                    <!-- Edit Button -->
-                                    <a class="btn btn-warning rounded-pill me-2" style="width:150px"
-                                       asp-controller="Reminder" asp-action="AddReminder"
-                                       asp-route-ReminderID="@reminder.ReminderID">
-                                        Edit
-                                    </a>
-                                   
-                                    <!-- Delete Button -->
+
+                                <!-- Edit Button -->
+                                <a class="btn btn-warning rounded-pill me-2" style="width:150px"
+                                   asp-controller="Reminder" asp-action="AddReminder"
+                                   asp-route-ReminderID="@reminder.ReminderID">
+                                    Edit
+                                </a>
+
+                                <!-- Delete Button -->
                                 <a class="btn btn-danger rounded-pill " style="width:150px"
-                                       asp-controller="Reminder" asp-action="Delete"
-                                       asp-route-ReminderID="@reminder.ReminderID"
-                                       @* onclick="return confirm('Are you sure you want to delete this reminder?');" *@
-                                       onclick="confirmDeletion()"
-                                       >
-                                        Delete
-                                    </a>
+                                   
+                                   asp-controller="Reminder" asp-action="Delete"
+                                   asp-route-ReminderID="@reminder.ReminderID"
+                                   >
                                 
+                                    Delete
+                                </a>
+
                             </td>
                         </tr>
                     }
@@ -85,17 +84,17 @@
 
 
 
-<hr />
+    <hr />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        
+
         function loadpartial(value) {
             $.ajax({
                 url: "/Reminder/GetPartialView?ReminderID=" + value, // Replace with your actual route
                 type: "GET",
                 success: function (response) {
-                    
+
                     $("#newPageContent").html(response); // Append content below
                 },
                 error: function () {
@@ -104,45 +103,25 @@
             });
         }
 
-                function confirmDeletion() {
-           
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to recover this reminder!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire("Deleted!", "Your reminder has been deleted.", "success");
-                    // Proceed with deletion (You can submit a form, send a request, etc.)
-                }
-            });
-        }
+                 
+         }
 
     </script>
-    <script>
-         function confirmDeletion() {
+    
+        @if (TempData["Msg"] != null)
+        {
+                <script>
+                Swal.fire({
+                title: "Delete",
+            text: "@TempData["Msg"]",
+            icon: "success",
+            showCancelButton: true,
 
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to recover this reminder!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Yes, delete it!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire("Deleted!", "Your reminder has been deleted.", "success");
-                    // Proceed with deletion (You can submit a form, send a request, etc.)
-                }
-            });
+                });
+        </script>
         }
 
-    </script>
+    
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

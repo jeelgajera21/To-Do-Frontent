@@ -25,18 +25,20 @@
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <input type="text" asp-for="Title" class="form-control" id="title" name="Title" >
+                        <span asp-validation-for="Title" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label for="description" class="form-label">Description</label>
                 <textarea class="form-control" asp-for="Description" id="description" name="Description" rows="3" ></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
                 <label for="dueDate" class="form-label">Due Date</label>
                         <input type="datetime-local"  
                                asp-for="DueDate" class="form-control" id="dueDate" name="DueDate">
-                        
+                        <span asp-validation-for="DueDate" class="text-danger"></span>
             </div>
 
             <div class="mb-3">
@@ -72,6 +74,7 @@
                            
 
                         </select>
+                        <span asp-validation-for="CategoryID" class="text-danger"></span>
             </div>
 
            
@@ -81,7 +84,11 @@
                asp-action="TaskList">Cancel</a>
         </form>
             </div>
+            
             </div>
 
 </section>
+
+   
+
 </main>

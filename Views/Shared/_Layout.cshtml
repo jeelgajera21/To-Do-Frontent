@@ -1,6 +1,6 @@
 ﻿@{
     var UserName = Context?.Session?.GetString("UserName") ?? "Guest";
-    var UserID = Context?.Session?.GetString("UserID") ?? "noUserID";
+    var UserID = Context?.Session?.GetString("UserID") ?? null;
     var Email = Context?.Session?.GetString("Email") ?? "noEmail";
     var Name = Context?.Session?.GetString("Name") ?? "noName";
 }
@@ -75,11 +75,11 @@
                     </a>
                 </li><!-- End Search Icon-->
 
-               
+
                 <li class="nav-item dropdown pe-3">
 
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0"  data-bs-toggle="dropdown">
-                        
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+
                         <span class="d-none d-md-block dropdown-toggle ps-2">@Name</span>
                     </a><!-- End Profile Iamge Icon -->
 
@@ -87,14 +87,14 @@
                         <li class="dropdown-header">
                             <h6>@UserName</h6>
                             <h6>@Email</h6>
-                           
+
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" asp-controller="Home" asp-action="Profile">
+                            <a class="dropdown-item d-flex align-items-center" asp-controller="User" asp-action="GetUserByLogin">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
@@ -103,12 +103,7 @@
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                                <i class="bi bi-gear"></i>
-                                <span>Account Settings</span>
-                            </a>
-                        </li>
+
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -122,14 +117,24 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" asp-action="Logout" asp-controller="User">
-                                <i class="bi bi-box-arrow-right"></i>
-                                <span>Sign Out</span>
-                            </a>
-                        </li>
-
+                        @if (UserID != null)
+                        {
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" asp-action="Logout" asp-controller="User">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Sign Out</span>
+                                </a>
+                            </li>
+                        }
+                        @if (UserID == null)
+                        {
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" asp-action="Login" asp-controller="User">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    <span>Login</span>
+                                </a>
+                            </li>
+                        }
                     </ul><!-- End Profile Dropdown Items -->
                 </li><!-- End Profile Nav -->
 
@@ -149,7 +154,7 @@
                 </a>
             </li><!-- End Dashboard Nav -->
 
-           @*  <li class="nav-item">
+            @*  <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Task" asp-action="TaskList">
                     <i class="ri ri-check-double-fill"></i>
                     <span>Task</span>
@@ -161,7 +166,7 @@
                     <span>Task</span>
                 </a>
             </li><!-- End Task Page Nav -->
-            
+
             @* <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Category" asp-action="CategoryList">
                     <i class="bi bi-folder"></i>
@@ -174,7 +179,7 @@
                     <span>Category</span>
                 </a>
             </li><!-- End Task Page Nav -->
-            
+
             @* <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Reminder" asp-action="ReminderList">
                     <i class="ri ri-check-double-fill"></i>
@@ -187,6 +192,8 @@
                     <span>Reminder</span>
                 </a>
             </li><!-- End Task Page Nav -->
+
+           @*  <!-- #region pages -->
 
             <li class="nav-heading">Pages</li>
 
@@ -232,7 +239,7 @@
             <li class="nav-item">
                 <a href="hangfire">HangFire Dashboard</a>
             </li>
-            
+
             <li class="nav-item">
                 <a class="nav-link collapsed" href="pages-error-404.html">
                     <i class="bi bi-dash-circle"></i>
@@ -246,7 +253,7 @@
                     <span>Blank</span>
                 </a>
             </li><!-- End Blank Page Nav -->
-
+            <!-- #endregion --> *@
         </ul>
 
     </aside><!-- End Sidebar-->
@@ -254,7 +261,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-           
+
             @await Html.PartialAsync("_Breadcrumb")
 
         </div><!-- End Page Title -->
@@ -265,10 +272,10 @@
             </main>
         </div>
 
-      
+
 
     </main><!-- End #main -->
-   @*  <!-- ======= Footer ======= -->
+    @*  <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
         <div class="copyright">
             &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved

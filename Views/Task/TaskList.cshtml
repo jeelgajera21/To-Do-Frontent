@@ -93,12 +93,20 @@
                                     </a>
                                     
 
-                                    <!-- Delete Button -->
+                                  @*   <!-- Delete Button -->
                                     <a class="btn btn-danger rounded-pill w-100" asp-controller="Task" asp-action="DeleteTask"
                                        asp-route-TaskID="@i.TaskID"
                                        onclick="return confirm('Are you sure you want to delete this task?');">
                                         Delete
-                                    </a>
+                                    </a> *@
+
+                                <!-- Delete Button -->
+                                <a class="btn btn-danger rounded-pill " style="width:150px"
+                                   asp-controller="Task" asp-action="DeleteTask"
+                                   asp-route-TaskID="@i.TaskID"
+                                >
+                                    Delete
+                                </a>
                                
                             </td>
                         </tr>
@@ -107,7 +115,7 @@
             </table>
         </section>
     </div>
-     
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -130,5 +138,20 @@
         });
     </script>
 
+    @if (TempData["Msg"] != null)
+    {
+        <script>
+                Swal.fire({
+                title: "Delete",
+            text: "@TempData["Msg"]",
+            icon: "success",
+            showCancelButton: true,
 
+                });
+        </script>
+    }
+
+
+
+   
 </main>

@@ -9,7 +9,7 @@ namespace To_Do_UI
         {
             var session = filterContext.HttpContext.Session;
             var userId = session.GetString("UserID");
-            Console.WriteLine("Userid : "+userId);
+            /*Console.WriteLine("Userid : "+userId);*/
            
 
             if (filterContext.HttpContext.Session.GetString("UserID") == null)

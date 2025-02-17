@@ -1,0 +1,52 @@
+﻿@model ReminderModel
+
+<main>
+    <div class="container container-fluid pt-3">
+        <section class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3>@(Model.ReminderID == null ? "Add New Reminder" : "Edit Reminder")</h3>
+                    </div>
+                </div>
+            </div>
+
+            <form asp-controller="Reminder" asp-action="Save" method="post">
+                <input type="hidden" asp-for="ReminderID" />
+
+                <div class="mb-3">
+                    <label class="form-label">Task ID</label>
+                    <input type="number" class="form-control" asp-for="TaskID" required>
+                    @* <select class="form-select" asp-for="TaskID" id="taskID" name="TaskID">
+
+                        <option disabled selected="true" value="0">Select Task</option>
+
+                        @foreach (var task in ViewBag.TaskList)
+                        {
+                            <option value=@task.TaskID>@task.Title</option>
+                        }
+                    </select> *@
+
+
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Reminder Time</label>
+                    <input type="datetime-local" 
+                           name="ReminderTime" class="form-control" asp-for="ReminderTime" required>
+                </div>
+
+               @*  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" asp-for="IsSent">
+                    <label class="form-check-label">Is Sent</label>
+                </div> *@
+
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save"></i> Save
+                </button>
+                <a asp-controller="Reminder" asp-action="ReminderList" class="btn btn-secondary">Cancel</a>
+            </form>
+        </section>
+    </div>
+</main>

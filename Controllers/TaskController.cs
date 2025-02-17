@@ -4,10 +4,11 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using To_Do_UI.Models;
 using System.Text;
+using System.Net;
 
 namespace To_Do_UI.Controllers
 {
-    //[CheckAccess]
+    [CheckAccess]
     [Route("[controller]")]
     public class TaskController : Controller
     {
@@ -48,7 +49,8 @@ namespace To_Do_UI.Controllers
 
         [HttpGet]
         [Route("TaskListByUser")]
-        public IActionResult TaskListByUser()
+        public async Task<IActionResult> TaskListByUser()
+
         {
             var userid = HttpContext.Session.GetInt32("UserID");
             Console.WriteLine("userid : " + userid);
@@ -68,6 +70,7 @@ namespace To_Do_UI.Controllers
 
                 task = JsonConvert.DeserializeObject<List<TaskModel>>(data);
             }
+           
 
 
             return View("TaskList", task);
@@ -120,8 +123,8 @@ namespace To_Do_UI.Controllers
                 // Handle the case where UserID is null, e.g., redirect to login or show an error
                 return RedirectToAction("Login", "User");
             }
-            if (ModelState.IsValid)
-            {
+           /* if (ModelState.IsValid)
+            {*/
                 var json = JsonConvert.SerializeObject(task);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 HttpResponseMessage response;
@@ -133,8 +136,27 @@ namespace To_Do_UI.Controllers
 
                 if (response.IsSuccessStatusCode)
                     return RedirectToAction("TaskListByUser");
+
+            else if (response.StatusCode == HttpStatusCode.BadRequest)
+            {
+                var data = await response.Content.ReadAsStringAsync();
+                var result = JsonConvert.DeserializeObject<dynamic>(data);
+
+                foreach (var errorKey in result.errors)
+                {
+                    string fieldName = errorKey.Name; // Get field name like "DueDate"
+                    foreach (var errorMessage in errorKey.Value)
+                    {
+                        ModelState.AddModelError(fieldName, errorMessage.ToString());
+                    }
+                }
+                ViewBag.CategoryList = await CategoryDropDown(); // ✅ Ensure dropdown is not null
+                return View("AddTask", task); // Return the same view with ModelState errors
             }
-          
+
+           //}
+
+
             return View("AddTask", task);
         }
         #endregion
@@ -145,6 +167,14 @@ namespace To_Do_UI.Controllers
         public async Task<IActionResult> DeleteTask(int TaskID)
         {
             var response = await _client.DeleteAsync($"Task/?TaskID={TaskID}");
+            if (response.IsSuccessStatusCode)
+            {
+                TempData["Msg"] = "Deleted Successfully"; // Use TempData instead
+            }
+            else
+            {
+                TempData["Msg"] = "Delete Failed";
+            }
             return RedirectToAction("TaskListByUser");
         }
         #endregion
@@ -157,8 +187,8 @@ namespace To_Do_UI.Controllers
         public async Task<List<CategoryDropDownByUser>> CategoryDropDown()
         {
             var userid = HttpContext.Session.GetInt32("UserID");
-            Console.WriteLine("userid : " + userid);
-
+            /*Console.WriteLine("userid : " + userid);
+*/
 
             List<CategoryDropDownByUser> category = new List<CategoryDropDownByUser>();
             HttpResponseMessage response = _client.GetAsync($"Category/dd-by-user/{userid}").Result;
@@ -166,14 +196,17 @@ namespace To_Do_UI.Controllers
             {
                 string data = response.Content.ReadAsStringAsync().Result;
                 category = JsonConvert.DeserializeObject<List<CategoryDropDownByUser>>(data);
-                Console.WriteLine(category);
+               /* Console.WriteLine(category);*/
             }
             return category;
         }
 
         #endregion
 
-
+        public IActionResult Index()
+        {
+            return View();
+        }
 
     }
 }
