@@ -220,7 +220,6 @@ namespace To_Do_UI.Controllers
         [HttpGet("GetPartialView")]
         public async Task<IActionResult> GetPartialView(int ReminderID)
         {
-
             var userid = HttpContext.Session.GetInt32("UserID");
             Console.WriteLine("userid : " + userid);
 
@@ -231,12 +230,15 @@ namespace To_Do_UI.Controllers
             {
                 string data = await response.Content.ReadAsStringAsync();
                 reminder = JsonConvert.DeserializeObject<ReminderModel>(data);
-
-                // Store the retrieved reminder in TempData for redirect
-               // TempData["ReminderModel"] = JsonConvert.SerializeObject(reminder);
             }
-            return PartialView("_viewname" ,reminder); // Loads the partial view
+            else
+            {
+                // Handle error (e.g., return a message to the client)
+                return PartialView("_BlankLayout" );
+            }
+            return PartialView("_viewname", reminder);
         }
+
         #endregion
 
         #region CategoryDropDown

@@ -79,7 +79,7 @@ namespace To_Do_UI.Controllers
                                 return View("Login", userLogin);
                             }
 
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("TaskListByUser", "Task");
                         }
                     }
 

@@ -1,47 +1,35 @@
 ﻿using Hangfire;
 using To_Do_UI;
 using To_Do_UI.Models;
+using To_Do_UI.Filters;
 
-#region create builder
+#region Create Builder
 var builder = WebApplication.CreateBuilder(args);
 #endregion
 
 #region Hangfire
-// Add Hangfire services to the container
+// 🔹 Configure Hangfire
 builder.Services.AddHangfire(config =>
-    config.UseSqlServerStorage("Data Source=MASCOT\\SQLEXPRESS;Initial Catalog=ToDoApp;Integrated Security=true;Encrypt=True;TrustServerCertificate=True")); // or another storage provider
+    config.UseSqlServerStorage("Data Source=MASCOT\\SQLEXPRESS;Initial Catalog=ToDoApp;Integrated Security=true;Encrypt=True;TrustServerCertificate=True"));
 
-builder.Services.AddHangfireServer();  // Add Hangfire background job server
+builder.Services.AddHangfireServer(); // 🔹 Add Hangfire background job server
 #endregion
 
 #region ViewsController
-// Add services to the container.
+// 🔹 Add controllers with views
 builder.Services.AddControllersWithViews();
 #endregion
 
 #region MailSettings
+// 🔹 Configure mail settings
 builder.Services.Configure<MailSettings>(builder.Configuration.GetSection("MailSettings"));
 #endregion
 
+#region Caching & Session
+// 🔹 Add caching
 builder.Services.AddDistributedMemoryCache();
 
-#region ApiAuthBearer injection
-// Register IHttpContextAccessor (if not already registered)
-builder.Services.AddHttpContextAccessor();
-
-// Register HttpClientFactory
-builder.Services.AddHttpClient("ApiClient", client =>
-{
-    client.BaseAddress = new Uri(builder.Configuration["WebApiBaseUrl"]);
-});
-
-// Register ApiAuthBearer as a Singleton
-builder.Services.AddSingleton<ApiAuthBearer>();
-
-#endregion
-
-#region Session
-// Add session support
+// 🔹 Add session support
 builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30); // Session timeout
@@ -50,30 +38,56 @@ builder.Services.AddSession(options =>
 });
 #endregion
 
+#region API Auth & HTTP Client
+// 🔹 Register IHttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
+// 🔹 Register HttpClientFactory
+var webApiBaseUrl = builder.Configuration["WebApiBaseUrl"];
+if (string.IsNullOrEmpty(webApiBaseUrl))
+{
+    throw new InvalidOperationException("WebApiBaseUrl is not configured in appsettings.json");
+}
+
+builder.Services.AddHttpClient("ApiClient", client =>
+{
+    client.BaseAddress = new Uri(webApiBaseUrl);
+});
+
+// 🔹 Register ApiAuthBearer as a singleton
+builder.Services.AddSingleton<ApiAuthBearer>();
+#endregion
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// 🔹 Ensure session middleware is enabled **before** authentication
+app.UseSession();
+
+// 🔹 Configure HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-#region HangfireDashboard
-app.UseHangfireDashboard();// 🔹 Hangfire Dashboard to monitor jobs
-app.UseHangfireServer();     // 🔹 Enables Hangfire job execution
-#endregion
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseSession(); // ✅ Enable session
-app.UseAuthentication(); // If using authentication
+app.UseStatusCodePagesWithReExecute("/Home/PageNotFound");
+
+app.UseAuthentication();
 app.UseAuthorization();
+
+#region HangfireDashboard
+app.UseHangfireDashboard("/hangfire", new DashboardOptions
+{
+    Authorization = new[] { new HangfireSessionAuthorizationFilter(app.Services.GetRequiredService<ILogger<HangfireSessionAuthorizationFilter>>()) }
+});
+#endregion
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=User}/{action=Login}/{id?}");
 
 app.Run();

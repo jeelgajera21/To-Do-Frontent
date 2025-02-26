@@ -52,7 +52,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a asp-controller="Home" asp-action="Index" class="logo d-flex align-items-center">
+            <a asp-controller="Task" asp-action="TaskListByUser" class="logo d-flex align-items-center">
                 <img src="~/assets/img/logo.png" alt="">
                 <span class="d-none d-lg-block">To Do</span>
             </a>
@@ -147,19 +147,14 @@
 
         <ul class="sidebar-nav" id="sidebar-nav">
 
-            <li class="nav-item">
+            @* <li class="nav-item">
                 <a class="nav-link " asp-controller="Home" asp-action="Index">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
-            </li><!-- End Dashboard Nav -->
+            </li><!-- End Dashboard Nav --> *@
 
-            @*  <li class="nav-item">
-                <a class="nav-link collapsed" asp-controller="Task" asp-action="TaskList">
-                    <i class="ri ri-check-double-fill"></i>
-                    <span>Task</span>
-                </a>
-            </li><!-- End Task Page Nav --> *@
+            
             <li class="nav-item">
                 <a class="nav-link collapsed" asp-controller="Task" asp-action="TaskListByUser">
                     <i class="ri ri-check-double-fill"></i>

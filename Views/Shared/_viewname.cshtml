@@ -1,5 +1,7 @@
 ﻿@model ReminderModel
-
+<div class="container ">
+    <hr />
+   
 <form method="post">
     <div class="form-group">
         <b>Task Title:</b>
@@ -9,9 +11,10 @@
                name="dateTime" class="form-control" required />
     </div>
 
-    <button type="button" onclick="scheduleEmail()" class="btn btn-primary">Schedule Email</button>
+    <button type="button" onclick="scheduleEmail()" class="btn btn-primary mt-4">Schedule Email</button>
 </form>
-
+    <hr />
+</div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
        function scheduleEmail() {

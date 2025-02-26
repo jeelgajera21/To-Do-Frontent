@@ -45,9 +45,10 @@
                             <td class="text-center justify-content-center">
                                 <!-- add reminder Button -->
                                 <button type="button" class="btn btn-success rounded-pill w-75"
-                                        onclick="loadpartial(@reminder.ReminderID)">
+                                        onclick="loadpartial('@reminder.ReminderID')">
                                     Add
                                 </button>
+
 
                             </td>
                             <td class="text-center d-flex  justify-content-center">
@@ -77,38 +78,31 @@
         </section>
     </div>
 
-    <hr />
+    
 
 
     <div id="newPageContent"></div>
 
 
 
-    <hr />
+    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-
         function loadpartial(value) {
             $.ajax({
-                url: "/Reminder/GetPartialView?ReminderID=" + value, // Replace with your actual route
+                url: "/Reminder/GetPartialView?ReminderID=" + value, // Correct URL
                 type: "GET",
                 success: function (response) {
-
-                    $("#newPageContent").html(response); // Append content below
+                    $("#newPageContent").html(response); // Update the page content
                 },
                 error: function () {
-                    alert("Failed to load content!");
+                    alert("Failed to load content!"); // Error handling
                 }
             });
         }
-
-                 
-         }
-
     </script>
-    
-        @if (TempData["Msg"] != null)
+    @if (TempData["Msg"] != null)
         {
                 <script>
                 Swal.fire({

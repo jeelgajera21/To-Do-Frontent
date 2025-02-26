@@ -39,10 +39,17 @@ namespace To_Do_UI.Controllers
             return View();
         }
         #endregion
+        #region _404PageNotfound
+
+        public IActionResult PageNotFound()
+        {
+            return View("_404PageNotfound","Shared" );
+        }
+        #endregion
 
         #region errorviewmodel
 
-       
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
