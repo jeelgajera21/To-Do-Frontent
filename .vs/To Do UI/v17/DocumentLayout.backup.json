@@ -78,8 +78,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-26T09:23:31.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:23:31.308Z"
             },
             {
               "$type": "Document",
@@ -91,8 +90,7 @@
               "RelativeToolTip": "Views\\User\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:17:04.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:17:04.438Z"
             },
             {
               "$type": "Document",
@@ -104,8 +102,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:14:07.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:14:07.868Z"
             },
             {
               "$type": "Document",
@@ -117,8 +114,7 @@
               "RelativeToolTip": "Controllers\\ReminderController.cs",
               "ViewState": "AgIAAJMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:51:10.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T08:51:10.85Z"
             },
             {
               "$type": "Document",
@@ -130,8 +126,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAADYAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:06:35.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:06:35.016Z"
             },
             {
               "$type": "Document",
@@ -143,8 +138,7 @@
               "RelativeToolTip": "Views\\Shared\\_404PageNotfound.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:04:15.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:04:15.32Z"
             },
             {
               "$type": "Document",
@@ -156,8 +150,7 @@
               "RelativeToolTip": "Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:03:32.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:03:32.655Z"
             },
             {
               "$type": "Document",
@@ -169,8 +162,7 @@
               "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:03:24.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:03:24.83Z"
             },
             {
               "$type": "Document",
@@ -180,7 +172,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAAwE0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T08:46:38.066Z",
               "EditorCaption": ""
@@ -195,8 +187,7 @@
               "RelativeToolTip": "Controllers\\HangFireEmailController.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAD4v4gAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:46:29.516Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T08:46:29.516Z"
             },
             {
               "$type": "Document",
@@ -208,8 +199,7 @@
               "RelativeToolTip": "Filters\\HangfireSessionAuthorizationFilter .cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAIwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:45:54.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T08:45:54.535Z"
             },
             {
               "$type": "Document",
@@ -221,8 +211,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T07:44:09.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T07:44:09.373Z"
             }
           ]
         }

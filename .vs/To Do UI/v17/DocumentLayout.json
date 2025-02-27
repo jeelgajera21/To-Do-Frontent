@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\Sem 6\\ADV .NET\\To Do UI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\controllers\\hangfireemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:controllers\\hangfireemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\filters\\hangfiresessionauthorizationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:filters\\hangfiresessionauthorizationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\controllers\\hangfireemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:controllers\\hangfireemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\shared\\_404pagenotfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -58,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Bookmark",
@@ -71,6 +75,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "EmailController.cs",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\EmailController.cs",
+              "RelativeDocumentMoniker": "Controllers\\EmailController.cs",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\EmailController.cs",
+              "RelativeToolTip": "Controllers\\EmailController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T04:39:39.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -78,12 +95,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-26T09:23:31.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:23:31.308Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\User\\Login.cshtml",
               "RelativeDocumentMoniker": "Views\\User\\Login.cshtml",
@@ -91,12 +107,11 @@
               "RelativeToolTip": "Views\\User\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:17:04.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:17:04.438Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -104,12 +119,11 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:14:07.868Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:14:07.868Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ReminderController.cs",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\ReminderController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReminderController.cs",
@@ -117,12 +131,11 @@
               "RelativeToolTip": "Controllers\\ReminderController.cs",
               "ViewState": "AgIAAJMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:51:10.85Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T08:51:10.85Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -130,12 +143,11 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAC0AAAAAAAAAAAAAADYAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:06:35.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:06:35.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "_404PageNotfound.cshtml",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_404PageNotfound.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_404PageNotfound.cshtml",
@@ -143,12 +155,11 @@
               "RelativeToolTip": "Views\\Shared\\_404PageNotfound.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:04:15.32Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:04:15.32Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Error.cshtml",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\Error.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
@@ -156,12 +167,11 @@
               "RelativeToolTip": "Views\\Shared\\Error.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:03:32.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:03:32.655Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
@@ -169,38 +179,37 @@
               "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:03:24.83Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T09:03:24.83Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAAwE0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T08:46:38.066Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "HangFireEmailController.cs",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\HangFireEmailController.cs",
               "RelativeDocumentMoniker": "Controllers\\HangFireEmailController.cs",
               "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\HangFireEmailController.cs",
               "RelativeToolTip": "Controllers\\HangFireEmailController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAD4v4gAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAgwGcAAACgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T08:46:29.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "HangfireSessionAuthorizationFilter .cs",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Filters\\HangfireSessionAuthorizationFilter .cs",
               "RelativeDocumentMoniker": "Filters\\HangfireSessionAuthorizationFilter .cs",
@@ -208,12 +217,11 @@
               "RelativeToolTip": "Filters\\HangfireSessionAuthorizationFilter .cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAIwCgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:45:54.535Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-26T08:45:54.535Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
@@ -221,8 +229,7 @@
               "RelativeToolTip": "Controllers\\UserController.cs",
               "ViewState": "AgIAACgAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T07:44:09.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-24T07:44:09.373Z"
             }
           ]
         }

@@ -101,7 +101,7 @@ namespace To_Do_UI.Controllers
             TimeSpan delay = scheduledDateTime - now;
             _backgroundJobClient.Schedule(() => SendEmail(email,
                 $"Scheduled Email Reminder",
-                $"Dear {Name},\r\n\r\nThis is a friendly reminder for your scheduled event.\r\n\r\n📅 Date & Time: {scheduledDateTime}\r\n📅 Scheduled At: {now}\r\n📌 Details: {Title}\r\n\r\nIf you have any questions or need to reschedule, feel free to reach out.\r\n\r\nBest regards,\r\nTo-Do Mascot"), delay);
+                $"Dear {Name},\r\n\r\nThis is a friendly reminder for your scheduled event.\r\n\r\n Date & Time: {scheduledDateTime}\r\n Scheduled At: {now}\r\n Details: {Title}\r\n\r\nIf you have any questions or need to reschedule, feel free to reach out.\r\n\r\nBest regards,\r\nTo-Do Mascot"), delay);
 
             TempData["ScheduleMessage"] = $"Email scheduled for {scheduledDateTime:dd-MM-yyyy HH:mm}";
             return RedirectToAction("ReminderListByUser", "Reminder"); // Redirect ensures TempData is passed correctly
