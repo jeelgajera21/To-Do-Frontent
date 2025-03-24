@@ -34,12 +34,29 @@
                         <span asp-validation-for="Description" class="text-danger"></span>
             </div>
 
-            <div class="mb-3">
+            @* <div class="mb-3">
                 <label for="dueDate" class="form-label">Due Date</label>
                         <input type="datetime-local"  
                                asp-for="DueDate" class="form-control" id="dueDate" name="DueDate">
                         <span asp-validation-for="DueDate" class="text-danger"></span>
-            </div>
+            </div> *@
+
+                    <div class="mb-3">
+                        <label for="dueDate" class="form-label">Due Date</label>
+                        @{
+                            var dueDate =  Model.DueDate < DateTime.Now
+                            ? DateTime.Now.AddDays(1) // Set to 1 day ahead if in the past
+                            : Model.DueDate; // Keep original if it's in the future or null
+                        }
+                        <input type="datetime-local"
+                               asp-for="DueDate"
+                               class="form-control"
+                               id="dueDate"
+                               name="DueDate"
+                               value="@dueDate.ToString("yyyy-MM-ddTHH:mm")">
+                        <span asp-validation-for="DueDate" class="text-danger"></span>
+                    </div>
+
 
             <div class="mb-3">
                 <label for="priority" class="form-label">Priority</label>
@@ -81,7 +98,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
             <a class="btn btn-black"
                asp-controller="Task"
-               asp-action="TaskList">Cancel</a>
+               asp-action="TaskListByUser">Cancel</a>
         </form>
             </div>
             

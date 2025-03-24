@@ -82,7 +82,9 @@ app.UseAuthorization();
 #region HangfireDashboard
 app.UseHangfireDashboard("/hangfire", new DashboardOptions
 {
-    Authorization = new[] { new HangfireSessionAuthorizationFilter(app.Services.GetRequiredService<ILogger<HangfireSessionAuthorizationFilter>>()) }
+    Authorization = new[] { new HangfireSessionAuthorizationFilter(app.Services.GetRequiredService<ILogger<HangfireSessionAuthorizationFilter>>()) },
+     DashboardTitle = "My Custom Hangfire Dashboard",
+    AppPath = "javascript:window.history.back();" // 🟢 Uses JavaScript to go back
 });
 #endregion
 

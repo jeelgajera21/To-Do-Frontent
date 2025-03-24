@@ -3,6 +3,7 @@
     var UserID = Context?.Session?.GetString("UserID") ?? null;
     var Email = Context?.Session?.GetString("Email") ?? "noEmail";
     var Name = Context?.Session?.GetString("Name") ?? "noName";
+   
 }
 
 
@@ -87,33 +88,30 @@
                         <li class="dropdown-header">
                             <h6>@UserName</h6>
                             <h6>@Email</h6>
+                            
 
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
-                        <li>
+                       @*  <li>
                             <a class="dropdown-item d-flex align-items-center" asp-controller="User" asp-action="GetUserByLogin">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
+                        </li> *@
+                       
+                        @if (Email.Equals("mascotbot21@gmail.com"))
+                        {
 
+                            <li>
+                                <a class="dropdown-item d-flex align-items-center" href="/hangfire">
+                                    <span>Hangfire</span>
+                                </a>
+                            </li>
+                        }
 
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                                <i class="bi bi-question-circle"></i>
-                                <span>Need Help?</span>
-                            </a>
-                        </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>

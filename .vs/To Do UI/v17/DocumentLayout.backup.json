@@ -3,52 +3,36 @@
   "WorkspaceRootPath": "D:\\Sem 6\\ADV .NET\\To Do UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\task\\addtask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\task\\addtask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\category\\addcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\category\\addcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\filters\\hangfiresessionauthorizationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:filters\\hangfiresessionauthorizationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\reminder\\addreminder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\reminder\\addreminder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\controllers\\hangfireemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:controllers\\hangfireemailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\shared\\_404pagenotfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\shared\\_404pagenotfound.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\reminder\\addreminderbytask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\reminder\\addreminderbytask.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\controllers\\remindercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:controllers\\remindercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|d:\\sem 6\\adv .net\\to do ui\\filters\\hangfiresessionauthorizationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{465BB310-C462-46F7-A29B-379B34563E3E}|To Do UI.csproj|solutionrelative:filters\\hangfiresessionauthorizationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -71,147 +55,106 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-26T09:23:31.308Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\User\\Login.cshtml",
-              "RelativeDocumentMoniker": "Views\\User\\Login.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\User\\Login.cshtml",
-              "RelativeToolTip": "Views\\User\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "AddCategory.cshtml",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Category\\AddCategory.cshtml",
+              "RelativeDocumentMoniker": "Views\\Category\\AddCategory.cshtml",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Category\\AddCategory.cshtml",
+              "RelativeToolTip": "Views\\Category\\AddCategory.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACUAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:17:04.438Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T09:14:07.868Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ReminderController.cs",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\ReminderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReminderController.cs",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\ReminderController.cs",
-              "RelativeToolTip": "Controllers\\ReminderController.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:51:10.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADYAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:06:35.016Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_404PageNotfound.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_404PageNotfound.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_404PageNotfound.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_404PageNotfound.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_404PageNotfound.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABLAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:04:15.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Error.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\Error.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\Error.cshtml",
-              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:03:32.655Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-26T09:03:24.83Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:46:38.066Z",
+              "WhenOpened": "2025-03-24T14:45:09.148Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HangFireEmailController.cs",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\HangFireEmailController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HangFireEmailController.cs",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\HangFireEmailController.cs",
-              "RelativeToolTip": "Controllers\\HangFireEmailController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAD4v4gAAAAIAAAAAAAAAA==",
+              "Title": "AddReminderByTask.cshtml",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminderByTask.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reminder\\AddReminderByTask.cshtml",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminderByTask.cshtml",
+              "RelativeToolTip": "Views\\Reminder\\AddReminderByTask.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC8AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T14:44:17.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReminderController.cs",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\ReminderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReminderController.cs",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\ReminderController.cs",
+              "RelativeToolTip": "Controllers\\ReminderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:46:29.516Z"
+              "WhenOpened": "2025-03-24T14:44:02.957Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "AddReminder.cshtml",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminder.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reminder\\AddReminder.cshtml",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Reminder\\AddReminder.cshtml",
+              "RelativeToolTip": "Views\\Reminder\\AddReminder.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAC8AAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T14:43:46.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddTask.cshtml",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Task\\AddTask.cshtml",
+              "RelativeDocumentMoniker": "Views\\Task\\AddTask.cshtml",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Task\\AddTask.cshtml",
+              "RelativeToolTip": "Views\\Task\\AddTask.cshtml",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAIwGQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T14:38:46.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAGgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-24T14:04:19.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "HangfireSessionAuthorizationFilter .cs",
               "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Filters\\HangfireSessionAuthorizationFilter .cs",
               "RelativeDocumentMoniker": "Filters\\HangfireSessionAuthorizationFilter .cs",
               "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Filters\\HangfireSessionAuthorizationFilter .cs",
               "RelativeToolTip": "Filters\\HangfireSessionAuthorizationFilter .cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAIwCgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-26T08:45:54.535Z"
+              "WhenOpened": "2025-03-24T14:01:21.89Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
-              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Controllers\\UserController.cs",
-              "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Sem 6\\ADV .NET\\To Do UI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwFQAAACVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-24T07:44:09.373Z"
+              "WhenOpened": "2025-02-27T05:06:46.914Z",
+              "EditorCaption": ""
             }
           ]
         }

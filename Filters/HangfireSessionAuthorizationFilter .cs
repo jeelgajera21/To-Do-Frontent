@@ -6,6 +6,8 @@ namespace To_Do_UI.Filters
 {
     public class HangfireSessionAuthorizationFilter : IDashboardAuthorizationFilter
     {
+        #region Ilogger & Filter
+
         private readonly ILogger<HangfireSessionAuthorizationFilter> _logger;
 
         public HangfireSessionAuthorizationFilter(ILogger<HangfireSessionAuthorizationFilter> logger)
@@ -13,6 +15,9 @@ namespace To_Do_UI.Filters
             _logger = logger;
         }
 
+        #endregion
+
+        #region Authorize
         public bool Authorize(DashboardContext context)
         {
             var httpContext = context.GetHttpContext();
@@ -35,6 +40,7 @@ namespace To_Do_UI.Filters
 
             _logger.LogInformation($"✅ UserId from session: {userId}");
             return true; // Only allow access if UserId == 2
-        }
+        } 
+        #endregion
     }
 }
